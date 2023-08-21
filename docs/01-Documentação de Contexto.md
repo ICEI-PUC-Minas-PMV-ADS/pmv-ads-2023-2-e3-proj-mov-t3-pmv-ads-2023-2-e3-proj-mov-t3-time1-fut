@@ -1,13 +1,20 @@
 # Introdução
 
-Texto descritivo com a visão geral do projeto abordado. Inclui o contexto, o problema, os objetivos, a justificativa e o público-alvo do projeto.
+Como sabemos, o Brasil é o país do futebol, onde muitos amam assistir e/ou praticar, contudo também sabemos da dificuldade que é para organizar a famosa pelada com os(a) amigos(as), gerando brigas, confusões e bagunças.
+
+A tradicional pelada entre amigos é praticamente uma religião no Brasil. Pelo menos uma vez por semana, homens e mulheres de diversos estilos e perfis se reúnem para uma pelada e logo depois a famosa resenha. Mas, ao mesmo tempo, organizar tudo para que a partida aconteça exige paciência, organização e foco. (SITE TERRA, Dino, fevereiro/2022 - https://www.terra.com.br/noticias/dino/aplicativo-de-pelada-organiza-jogos-de-futebol-entre-amigos-trazendo-solucoes-praticas-e-divertidas-para-os-amantes-do-esporte,89d66399d1ed53e02a8e0dabb2280b7c9l9nx2p4.html?utm_source=clipboard)
+
+Infelizmente as planilhas, grupos utilizados para organizar as partidas só fazem mais confusão, e acabam tendo brigas desnecessárias, por isso o aplicativo seria a melhor opção, pois faria o mais justo na escolha dos times, e não teria as famosas panelinhas.
+
+A criação do aplicativo para Gerenciamento de Peladas de Futebol, foi baseada no fato do aumento de formas de organizar o jogo da semana, e assim ajudar o usuário a ter mais controle e organização no seu jogo.
+
+Os usuários do aplicativo tem a necessidade de melhorar o desempenho, para que evitem enrolações e percam tempo de jogo, e assim controlar o fluxo de jogadores com ou sem mensalidade, disponibilizando um sistema de fácil manuseio, com uma interface agradável para todos.
+
+
 
 ## Problema
-Nesse momento você deve apresentar o problema que a sua aplicação deve  resolver. No entanto, não é a hora de comentar sobre a aplicação.
 
-Descreva também o contexto em que essa aplicação será usada, se  houver: empresa, tecnologias, etc. Novamente, descreva apenas o que de  fato existir, pois ainda não é a hora de apresentar requisitos  detalhados ou projetos.
-
-Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thinking, que permite um olhar de ponta a ponta para o problema.
+Diante do exposto, o problema que se busca resolver com este projeto é a limitação que os usuários têm em ter apenas o gerenciamento manual, gerando assim um controle muito básico, o que acaba gerando brigas, confusões, por não conseguir controlar de maneira eficiente a pelada de futebol entre amigos.
 
 > **Links Úteis**:
 > - [Objetivos, Problema de pesquisa e Justificativa](https://medium.com/@versioparole/objetivos-problema-de-pesquisa-e-justificativa-c98c8233b9c3)
@@ -16,28 +23,26 @@ Nesse momento, o grupo pode optar por fazer uso  de ferramentas como Design Thin
 
 ## Objetivos
 
-Aqui você deve descrever os objetivos do trabalho indicando que o objetivo geral é desenvolver um software para solucionar o problema apresentado acima. 
+O objetivo geral deste projeto se volta ao desenvolvimento de uma plataforma acessível e interativa para a organização de recursos para peladas de futebol, tendo em foco fazer o gerenciamento das informações a fim de atender o maior número de pessoas possíveis. Podendo ser destacado em específico os objetivos:
 
-Apresente também alguns (pelo menos 2) objetivos específicos dependendo de onde você vai querer concentrar a sua prática investigativa, ou como você vai aprofundar no seu trabalho.
+Fornecer funcionalidades para criação e gerenciamento de times;
+Controle e gerenciamento de cadastros de jogadores;
+Controle do tempo de uma partida;
+Manter a organização das mensalidades dos usuários;
  
 > **Links Úteis**:
 > - [Objetivo geral e objetivo específico: como fazer e quais verbos utilizar](https://blog.mettzer.com/diferenca-entre-objetivo-geral-e-objetivo-especifico/)
 
 ## Justificativa
 
-Descreva a importância ou a motivação para trabalhar com esta aplicação que você escolheu. Indique as razões pelas quais você escolheu seus objetivos específicos ou as razões para aprofundar em certos aspectos do software.
-
-O grupo de trabalho pode fazer uso de questionários, entrevistas e dados estatísticos, que podem ser apresentados, com o objetivo de esclarecer detalhes do problema que será abordado pelo grupo.
+Tendo em vista a dificuldade de encontrar aplicativos completos de gerenciamentos de peladas de futebol, decidimos desenvolver um aplicativo para esses usuários, contando com funcionalidades importantes, para que, ao cadastrar jogadores, o usuário possa gerenciar de uma forma mais eficiente a sua pelada de futebol com os amigos.
 
 > **Links Úteis**:
 > - [Como montar a justificativa](https://guiadamonografia.com.br/como-montar-justificativa-do-tcc/)
 
 ## Público-Alvo
 
-Descreva quem serão as pessoas que usarão a sua aplicação indicando os diferentes perfis. O objetivo aqui não é definir quem serão os clientes ou quais serão os papéis dos usuários na aplicação. A ideia é, dentro do possível, conhecer um pouco mais sobre o perfil dos usuários: conhecimentos prévios, relação com a tecnologia, relações
-hierárquicas, etc.
-
-Adicione informações sobre o público-alvo por meio de uma descrição textual, diagramas de personas e mapa de stakeholders.
+O intuito deste projeto é a democratização do acesso à sistemas informatizados. Desta forma, estabeleceu-se como público-alvo desta solução, todos os tipos de usuários que amam jogar futebol com os(a) amigos(as), e que não possuam e/ou não tenham acesso à aplicativos de gerenciamento de peladas. Adolescentes, adultos, idosos, geralmente possuem um grupo ou uma planilha para a organização do jogo, então o aplicativo será desenvolvido de forma bem acessivel para que possa atender a todas as idades de forma didática, evitando ser confuso.
 
 > **Links Úteis**:
 > - [Público-alvo](https://blog.hotmart.com/pt-br/publico-alvo/)
