@@ -8,6 +8,7 @@ As personas levantadas neste projeto englobam as seguintes características:
 ![Persona Vinícius Melo](img/persona1.png)
 ![Persona João Vítor](img/persona2.png)
 ![Persona Icaro Xavier](img/persona3.png)
+![Persona Larissa de Paula](img/persona4.png)
 
 ## Histórias de Usuários
 
@@ -22,6 +23,9 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 |João Vitor (Participante fixo)| Contabilizar minhas participações em gol a cada semana| Definir metas e me desafiar a sempre melhorar minhas estatísticas|
 |Icaro Xavier (Participante esporádico)| Visualizar a lista de presença facilmente| Programar-me ao sair de casa de manhã sabendo se levarei ou não a mochila com os equipamentos |
 |Icaro Xavier (Participante esporádico)|Informações rápidas e objetivas |Não receber inúmeras notificações de WhatsApp redundantes e que não me dizem respeito|
+|Larissa de Paula (Quer administrar uma pelada)| Avisar todas minhas amigas que iremos ter futebol semanalmente | Para poder estabelecer uma pelada frequente|
+|Larissa de Paula (Quer administrar uma pelada)| Confirmar a presença de todas que irão comparecer | Analisar a quantidade de pessoas para alugar a quadra de futebol.|
+
 
 ## Modelagem do Processo de Negócio 
 
@@ -34,7 +38,7 @@ Na segunda-feira pela manhã, é aberta a lista de presença para a pelada da se
 - Semimensalistas: Destinado àqueles que estão na lista de espera para virar mensalista. Estes pagam uma mensalidade inferior ao mensalista e possuem prioridade em caso de ausência de algum mensalista.
 - Goleiros:  Duas vagas destinadas a interessados a ir durante toda peleja no gol. Participam gratuitamente.
 - Ausentes: Destinado aos mensalistas para colocarem seus nomes em caso de ausência na semana.
-- Avulsos Destinado aos participantes esporádicos. Tem a última prioridade em caso de vagas livres. Estes pagam por dia que comparecem.
+- Avulsos: Destinado aos participantes esporádicos. Tem a última prioridade em caso de vagas livres. Estes pagam por dia que comparecem.
 
 O problema deste modelo atual é a poluição e quantidade alta de mensagens no grupo, pois para cada confirmação a mensagem da lista é copiada reenviada com o nome acrescentado. Em uma semana em que todas as vagas são preenchidas e que existem confirmações, desconfirmações, alertas, avisos e lembretes são enviadas em média 80 a 100 mensagens.
 
@@ -124,16 +128,8 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 
 ## Diagrama de Casos de Uso
 
-O diagrama de casos de uso é o próximo passo após a elicitação de requisitos, que utiliza um modelo gráfico e uma tabela com as descrições sucintas dos casos de uso e dos atores. Ele contempla a fronteira do sistema e o detalhamento dos requisitos funcionais com a indicação dos atores, casos de uso e seus relacionamentos. 
-
-As referências abaixo irão auxiliá-lo na geração do artefato “Diagrama de Casos de Uso”.
-
-> **Links Úteis**:
-> - [Criando Casos de Uso](https://www.ibm.com/docs/pt-br/elm/6.0?topic=requirements-creating-use-cases)
-> - [Como Criar Diagrama de Caso de Uso: Tutorial Passo a Passo](https://gitmind.com/pt/fazer-diagrama-de-caso-uso.html/)
-> - [Lucidchart](https://www.lucidchart.com/)
-> - [Astah](https://astah.net/)
-> - [Diagrams](https://app.diagrams.net/)
+O diagrama de casos de uso a seguir resume as interações dos atores com a aplicação:
+![Diagrama de casos de uso](img/dcu.png)
 
 # Matriz de Rastreabilidade
 
