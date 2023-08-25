@@ -147,17 +147,14 @@ A matriz deve contemplar todos os elementos relevantes que fazem parte do sistem
 
 # Gerenciamento de Projeto
 
-De acordo com o PMBoK v6 as dez áreas que constituem os pilares para gerenciar projetos, e que caracterizam a multidisciplinaridade envolvida, são: Integração, Escopo, Cronograma (Tempo), Custos, Qualidade, Recursos, Comunicações, Riscos, Aquisições, Partes Interessadas. Para desenvolver projetos um profissional deve se preocupar em gerenciar todas essas dez áreas. Elas se complementam e se relacionam, de tal forma que não se deve apenas examinar uma área de forma estanque. É preciso considerar, por exemplo, que as áreas de Escopo, Cronograma e Custos estão muito relacionadas. Assim, se eu amplio o escopo de um projeto eu posso afetar seu cronograma e seus custos.
+O Gerenciamento de Projeto envolve a aplicação de conhecimentos, habilidades, ferramentas e técnicas nas atividades do projeto para atender aos seus requisitos. Ele abrange a iniciação, planejamento, execução, monitoramento e controle e encerramento de um projeto. O objetivo principal é concluir o projeto conforme o escopo definido, no tempo estipulado e dentro do orçamento previsto, atendendo às expectativas das partes interessadas. Com isso foi projetado um planejamento com o Gerenciamento de Tempo, Gerenciamento de Equipe e Gestão do Orçamento para garantir entrega do produto final.
 
 ## Gerenciamento de Tempo
 
-Com diagramas bem organizados que permitem gerenciar o tempo nos projetos, o gerente de projetos agenda e coordena tarefas dentro de um projeto para estimar o tempo necessário de conclusão.
+O Gerenciamento de Tempo refere-se ao processo de organizar e planejar a divisão do tempo entre atividades específicas. No contexto de projetos, envolve a identificação de todas as tarefas necessárias, a duração estimada para cada uma delas e a sequência adequada para execução. Assim, foi projetado um board do tipo Roadmap, através da ferramenta de Projetos do Github para acompanhamento das tarefas definidas dentro das Sprints, garantindo um bom gerenciamento de tempo e que o projeto seja concluído dentro do prazo definido.
 
-![Diagrama de rede simplificado notação francesa (método francês)](img/02-diagrama-rede-simplificado.png)
+![Orçamento](img/tarefas.png)
 
-O gráfico de Gantt ou diagrama de Gantt também é uma ferramenta visual utilizada para controlar e gerenciar o cronograma de atividades de um projeto. Com ele, é possível listar tudo que precisa ser feito para colocar o projeto em prática, dividir em atividades e estimar o tempo necessário para executá-las.
-
-![Gráfico de Gantt](img/02-grafico-gantt.png)
 
 ## Gerenciamento de Equipe
 
@@ -167,7 +164,11 @@ O gerenciamento adequado de tarefas contribuirá para que o projeto alcance alto
 
 ## Gestão de Orçamento
 
-O processo de determinar o orçamento do projeto é uma tarefa que depende, além dos produtos (saídas) dos processos anteriores do gerenciamento de custos, também de produtos oferecidos por outros processos de gerenciamento, como o escopo e o tempo.
+A gestão de orçamento diz respeito à previsão, alocação e controle dos custos do projeto. Inicia-se com a elaboração de um orçamento detalhado, baseado nas necessidades do projeto e nos recursos disponíveis. Foi desenvolvido para o projeto uma estimativa variável com os custos médios do projeto.
 
-![Orçamento](img/02-orcamento.png)
+Foi especificado com base no site Glassdoor.com uma média de salarios mensais para estimar os custos:
+![Orçamento](img/Salarios.png)
+
+Assim foi projetado a estimativa de custos finais do Projeto com duração de 5 meses, onde a equipe conta com um Scrum Master, um Quality Assurance, e três Desenvolvedores: 
+![Orçamento](img/orcamento.png)
 </p>
