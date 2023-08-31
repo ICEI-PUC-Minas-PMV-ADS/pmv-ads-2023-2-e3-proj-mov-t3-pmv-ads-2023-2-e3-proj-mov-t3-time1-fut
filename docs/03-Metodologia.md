@@ -5,10 +5,20 @@
 
 Descreva aqui a metodologia de trabalho do grupo para atacar o problema. Definições sobre os ambiente de trabalho utilizados pela  equipe para desenvolver o projeto. Abrange a relação de ambientes utilizados, a estrutura para gestão do código fonte, além da definição do processo e ferramenta através dos quais a equipe se organiza (Gestão de Times).
 
-## Relação de Ambientes de Trabalho
+Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito é apresentada na tabela que se segue.
 
-Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a relação dos ambientes com seu respectivo propósito deverá ser apresentada em uma tabela que especifica que detalha Ambiente, Plataforma e Link de Acesso. 
-Nota: Vide documento modelo do estudo de caso "Portal de Notícias" e defina também os ambientes e frameworks que serão utilizados no desenvolvimento de aplicações móveis.
+|Ambiente                       |Plataforma  |Link de acesso                                                                                                          |
+|---------------------------    |----------  |------------------------------------------------------------------------------------------------------------------------|
+|Repositório de código-fonte    |GitHub      |[GitHub](xxxxx)|
+|Documentos do projeto          |GitHub|[xxxxx](xxxxxx)                                | 
+|Gerenciamento do projeto       | xxxxx    |[xxxxx](xxxxx)                                  |
+|Gerenciamento de diagramas     |xxxxxx |[xxxxx](xxxxxxx)                                                    | 
+|Gerenciamento de wireframes    |xxxxxx|[xxxxxx](xxxxxxxx)                       | 
+|Gerenciamento do banco de dados|xxxxxx| [xxxxxxx](xxxxxxxxx)                                                                             |
+|Gerenciamento de código-fonte|xxxxxxxxxx|                                                                                                                    |
+|Serviço de hospedagem da aplicação|xxxxxxx|[xxxxxxx](xxxxxx)                                                         |
+ 
+ 
 
 ## Controle de Versão
 
@@ -44,14 +54,28 @@ Discuta como a configuração do projeto foi feita na ferramenta de versionament
 ## Gerenciamento de Projeto
 
 ### Divisão de Papéis
+No tocante à dinâmica de organização da equipe, é preconizada a realização de duas reuniões por semana entre os membros da equipe, e uma reunião por semana com o professor orientador para apresentação  das entregas, com avaliação e possíveis indicações de ajustes a serem executados, além das orientações para as entregas da semana seguinte. As reuniões são organizadas na seguinte forma:
+1. Reunião semanal com o Professor orientador, sempre às terças-feiras às 19h na plataforma Teams e gravadas sempre que necessário.
+2. Reunião entre os membros da equipe, ordinariamente às quartas-feiras às 16:00 na plataforma Teams. Nesta reunião são discutidos os possíveis ajustes apontados pelo Professor na reunião 1, bem como a divisão de tarefas para a próxima entrega.
+3. Reunião entre os membros da equipe, ordinariamente às segundas-feiras às 16:00 na plataforma Teams. Nesta reunião são apresentadas as produções definidas na reunião 2 e feitos os ajustes necessários para a entrega da semana. 
+
+Quanto ao gerenciamento do projeto, foram criados quadros Kanban na ferramenta XXXXX referentes a cada sprint semanal, transformando o trabalho em andamento visível para toda a equipe, criando um sinal visual que indica que a nova atividade pode ou não ser iniciada e se o prazo acordado está sendo seguido. 
+Para organização e distribuição das atividades do projeto, o XXXXX foi estruturado com as seguintes listas:
+
+- Backlog: atividades a serem trabalhadas;
+- To Do: atividades da sprint atual;
+- Doing: atividades iniciadas e que ainda sem conclusão;
+- Done: atividades executadas e prontas para entrega.
+ 
+![xxxxx](xxxxxx)
 
 Apresente a divisão de papéis entre os membros do grupo.
 
 Exemplificação: A equipe utiliza metodologias ágeis, tendo escolhido o Scrum como base para definição do processo de desenvolvimento. A equipe está organizada da seguinte maneira:
-- Scrum Master: Felipe Domingos;
-- Product Owner: Rommel Carneiro;
-- Equipe de Desenvolvimento: Pedro Penna, Pedro Ivo, Rodrigo Richard;
-- Equipe de Design: Simone Nogueira.
+- Scrum Master: Douglas Zoccarato Gomes;
+- Product Owner: Lia Araruna de Lima;
+- Equipe de Desenvolvimento: Leticia Layane Pauli, Matheus Araujo Rios Fernandino;
+- Equipe de Design: Matheus Leão.
 
 > **Links Úteis**:
 > - [11 Passos Essenciais para Implantar Scrum no seu Projeto](https://mindmaster.com.br/scrum-11-passos/)
