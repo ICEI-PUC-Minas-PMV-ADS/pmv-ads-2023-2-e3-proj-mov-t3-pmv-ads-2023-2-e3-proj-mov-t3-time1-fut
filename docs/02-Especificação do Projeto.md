@@ -70,7 +70,7 @@ O processo atual (AS IS) tem suas atividades descritas conforme o mapeamento aba
 
 No processo futuro (TO BE), a maioria das atividades são semelhantes ao processo atual, no entanto, destaca-se que agora são feitas com suporte de uma aplicação que auxilia no gerenciamento adequado. Além disso, foram designadas atividades a serem feitas pela própria aplicação, independente da ação humana, tornando o processo mais automatizado. 
 
-![Processo 2](img/ProcessosTOBE.png)
+![Processo 2](img/ProcessoTOBE.png)
 
 ## Indicadores de Desempenho
 
