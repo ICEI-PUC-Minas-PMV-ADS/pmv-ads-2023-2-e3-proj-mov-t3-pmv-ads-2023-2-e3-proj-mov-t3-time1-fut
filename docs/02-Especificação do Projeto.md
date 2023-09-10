@@ -57,19 +57,20 @@ Além de cobrar dos participantes que se manifestem na lista de presença, o adm
 
 ### Descrição Geral da Proposta
 
-Apresente aqui uma descrição da sua proposta abordando seus limites e suas ligações com as estratégias e objetivos do negócio. Apresente aqui as oportunidades de melhorias.
+A proposta consiste em tornar o processo de gerenciamento de peladas semanais mais descentralizado e automatizado. Nos itens abaixo, estão expostos o mapeamento de processo atual e futuro.
 
-### Processo 1 – NOME DO PROCESSO
+### Processo AS IS – Gerenciar pelada semanal
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 1. Em seguida, apresente o modelo do processo 1, descrito no padrão BPMN. 
+O processo atual (AS IS) tem suas atividades descritas conforme o mapeamento abaixo. No entanto, foram observadas alguns oportunidades de melhoria, como por exemplo: atividades puramente manuais e centralizadas em uma única pessoa e alto fluxo de mensagens no grupo do Whastapp fazendo com que haja risco de perda de informações.
 
-![Processo 1](img/02-bpmn-proc1.png)
 
-### Processo 2 – NOME DO PROCESSO
+![Processo 1](img/ProcessoASIS.png)
 
-Apresente aqui o nome e as oportunidades de melhorias para o processo 2. Em seguida, apresente o modelo do processo 2, descrito no padrão BPMN.
+### Processo TO BE – Gerenciar pelada semanal
 
-![Processo 2](img/02-bpmn-proc2.png)
+No processo futuro (TO BE), a maioria das atividades são semelhantes ao processo atual, no entanto, destaca-se que agora são feitas com suporte de uma aplicação que auxilia no gerenciamento adequado. Além disso, foram designadas atividades a serem feitas pela própria aplicação, independente da ação humana, tornando o processo mais automatizado. 
+
+![Processo 2](img/ProcessosTOBE.png)
 
 ## Indicadores de Desempenho
 
