@@ -54,15 +54,48 @@ Explique como a hospedagem e o lançamento da plataforma foi feita.
 
 ## Qualidade de Software
 
-Conceituar qualidade de fato é uma tarefa complexa, mas ela pode ser vista como um método gerencial que através de procedimentos disseminados por toda a organização, busca garantir um produto final que satisfaça às expectativas dos stakeholders.
+Com o objetivo de avaliar a qualidade do software desenvolvido, as seguintes características e subcaracterísticas da ISO/IEC 25010 foram selecionadas como parâmetros para o projeto:
 
-No contexto de desenvolvimento de software, qualidade pode ser entendida como um conjunto de características a serem satisfeitas, de modo que o produto de software atenda às necessidades de seus usuários. Entretanto, tal nível de satisfação nem sempre é alcançado de forma espontânea, devendo ser continuamente construído. Assim, a qualidade do produto depende fortemente do seu respectivo processo de desenvolvimento.
+1) ADEQUAÇÃO FUNCIONAL: Essa característica se refere à capacidade do software de realizar o que se propõe a fazer.
 
-A norma internacional ISO/IEC 25010, que é uma atualização da ISO/IEC 9126, define oito características e 30 subcaracterísticas de qualidade para produtos de software.
-Com base nessas características e nas respectivas sub-características, identifique as sub-características que sua equipe utilizará como base para nortear o desenvolvimento do projeto de software considerando-se alguns aspectos simples de qualidade. Justifique as subcaracterísticas escolhidas pelo time e elenque as métricas que permitirão a equipe avaliar os objetos de interesse.
+1.1 - Integridade funcional: cobertura de todas as tarefas e objetivos.
 
-> **Links Úteis**:
->
-> - [ISO/IEC 25010:2011 - Systems and software engineering — Systems and software Quality Requirements and Evaluation (SQuaRE) — System and software quality models](https://www.iso.org/standard/35733.html/)
-> - [Análise sobre a ISO 9126 – NBR 13596](https://www.tiespecialistas.com.br/analise-sobre-iso-9126-nbr-13596/)
-> - [Qualidade de Software - Engenharia de Software 29](https://www.devmedia.com.br/qualidade-de-software-engenharia-de-software-29/18209/)
+
+2) EFICIÊNCIA DE DESEMPENHO: Esse atributo está relacionado à performance do software.
+
+2.1 - Comportamento temporal: tempo de resposta e processamento.
+
+Nessa etapa, espera-se que o aplicativo possua um tempo de resposta e processamento aceitável, sem que o usuário precise esperar muito tempo para realizar suas ações.
+
+3) COMPATIBILIDADE: É a capacidade do produto ou do sistema de trocar informações, assim como de realizar funções enquanto compartilha um hardware.
+
+3.1 -  Coexistência: capacidade de realizar funções eficientemente enquanto compartilha um ambiente ou recursos com outros produtos.
+
+Essa característica e a subcaracterística serão importantes para identificar se a utilização do aplicativo pode se dar em paralelo com outras atividades do sistema.
+
+4) USABILIDADE: É a capacidade do sistema realizar objetivos eficientemente, efetivamente e de maneira satisfatória.
+
+4.1 -  Capacidade de aprendizado: facilidade de aprender como utilizar o sistema;
+4.2 - Proteção de erro do usuário: capacidade do produto proteger o usuário de erros. O aplicativo deve ser o mais intuitivo possível e também possuir informações explícitas onde possa encontrar alguma dificuldade; 4.3 - Estética da interface de usuário: agradabilidade da interface;
+4.4 - Acessibilidade: capacidade do sistema ser utilizado por pessoas com características e capacidades diversas.
+
+5) CONFIABILIDADE: O quão bem o produto realiza funções específicas sob condições específicas.
+
+5.1 - Maturidade: capacidade do produto atingir as necessidades de confiabilidade;
+5.2 - Disponibilidade: Se o sistema está acessível e operante.
+
+6) SEGURANÇA: Capacidade do sistema proteger informação e dados vulneráveis.
+
+6.1 - Confidencialidade: sistema tem que ser capaz de garantir que dados são acessados apenas por aqueles que tem acesso autorizado;
+6.2 - Integridade: capacidade de prevenir acesso não-autorizado e modificação de dados ou programas de computador.
+
+7) MANUTENIBILIDADE: É a característica que engloba a capacidade de um sistema ser modificado, atualizado e adaptado às mudanças de ambiente e requerimentos.
+
+7.1 - Modularidade: o sistema pode sofrer mudanças sem impactar em outros componentes;
+7.2 - Reusabilidade: capacidade de um recurso poder ser utilizado em mais de um sistema;
+7.3 - Modificabilidade: capacidade do sistema ser modificado sem introduzir defeitos ou diminuir a qualidade do atual;
+7.4 - Testabilidade: efetividade de testes para o sistema.
+
+8) PORTABILIDADE:  Capacidade do sistema ser transferido de um ambiente para outro.
+
+8.1 - Facilidade de instalação: capacidade do sistema ser instalado ou desinstalado facilmente.
