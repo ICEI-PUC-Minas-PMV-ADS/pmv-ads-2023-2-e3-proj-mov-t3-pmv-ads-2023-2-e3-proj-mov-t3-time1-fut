@@ -1,79 +1,58 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+# Aplicativo de gerenciamento de partidas de futebol
 
-# Getting Started
+`ANÁLISE E DESENVOLVIMENTO DE SISTEMAS`
 
->**Note**: Make sure you have completed the [React Native - Environment Setup](https://reactnative.dev/docs/environment-setup) instructions till "Creating a new application" step, before proceeding.
+`Desenvolvimento de uma Aplicação Móvel em um Ambiente de Negócio`
 
-## Step 1: Start the Metro Server
+`3º SEMESTRE/2023`
 
-First, you will need to start **Metro**, the JavaScript _bundler_ that ships _with_ React Native.
+O objetivo geral deste projeto se volta ao desenvolvimento de uma plataforma acessível e interativa para a oferta de recursos de uma pizzaria, tendo em foco fazer o gerenciamento das informações a fim de atender o maior número de pessoas possíveis.
 
-To start Metro, run the following command from the _root_ of your React Native project:
+## Integrantes
 
-```bash
-# using npm
-npm start
+* Douglas Zoccarato Gomes
+* Leticia Layane Pauli
+* Lia Araruna de Lima
+* Matheus Araujo Rios Fernandino
+* Matheus Silva Leão
 
-# OR using Yarn
-yarn start
-```
 
-## Step 2: Start your Application
+## Orientador
 
-Let Metro Bundler run in its _own_ terminal. Open a _new_ terminal from the _root_ of your React Native project. Run the following command to start your _Android_ or _iOS_ app:
+* Mateus Curcino de Lima
 
-### For Android
+## Instruções de utilização
 
-```bash
-# using npm
-npm run android
+Assim que a primeira versão do sistema estiver disponível, deverá complementar com as instruções de utilização. Descreva como instalar eventuais dependências e como executar a aplicação.
 
-# OR using Yarn
-yarn android
-```
+ link da aplicação interativa disponível para acesso localhost.
 
-### For iOS
+Usuário de teste, o login e a senha aqui ( usuário - xxxxxx / senha - xxxxx).
 
-```bash
-# using npm
-npm run ios
+O link e o usuário/senha descritos acima são apenas exemplos de como tais informações deverão ser apresentadas.
 
-# OR using Yarn
-yarn ios
-```
+# Documentação
 
-If everything is set up _correctly_, you should see your new app running in your _Android Emulator_ or _iOS Simulator_ shortly provided you have set up your emulator/simulator correctly.
+<ol>
+<li><a href="docs/01-Documentação de Contexto.md"> Documentação de Contexto</a></li>
+<li><a href="docs/02-Especificação do Projeto.md"> Especificação do Projeto</a></li>
+<li><a href="docs/03-Metodologia.md"> Metodologia</a></li>
+<li><a href="docs/04-Projeto de Interface.md"> Projeto de Interface</a></li>
+<li><a href="docs/05-Arquitetura da Solução.md"> Arquitetura da Solução</a></li>
+<li><a href="docs/06-Template Padrão da Aplicação.md"> Template Padrão da Aplicação</a></li>
+<li><a href="docs/07-Programação de Funcionalidades.md"> Programação de Funcionalidades</a></li>
+<li><a href="docs/08-Plano de Testes de Software.md"> Plano de Testes de Software</a></li>
+<li><a href="docs/09-Registro de Testes de Software.md"> Registro de Testes de Software</a></li>
+<li><a href="docs/10-Plano de Testes de Usabilidade.md"> Plano de Testes de Usabilidade</a></li>
+<li><a href="docs/11-Registro de Testes de Usabilidade.md"> Registro de Testes de Usabilidade</a></li>
+<li><a href="docs/12-Apresentação do Projeto.md"> Apresentação do Projeto</a></li>
+<li><a href="docs/13-Referências.md"> Referências</a></li>
+</ol>
 
-This is one way to run your app — you can also run it directly from within Android Studio and Xcode respectively.
+# Código
 
-## Step 3: Modifying your App
+<li><a href="src/README.md"> Código Fonte</a></li>
 
-Now that you have successfully run the app, let's modify it.
+# Apresentação
 
-1. Open `App.tsx` in your text editor of choice and edit some lines.
-2. For **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Developer Menu** (<kbd>Ctrl</kbd> + <kbd>M</kbd> (on Window and Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (on macOS)) to see your changes!
-
-   For **iOS**: Hit <kbd>Cmd ⌘</kbd> + <kbd>R</kbd> in your iOS Simulator to reload the app and see your changes!
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [Introduction to React Native](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you can't get this to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+<li><a href="presentation/README.md"> Apresentação da solução</a></li>
