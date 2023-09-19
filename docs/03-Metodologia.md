@@ -15,8 +15,8 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 |Gerenciamento de diagramas     |brModelo |[brModelo](xxxxxxx)                                                    | 
 |Gerenciamento de wireframes    |InvisionApp|[InvisionApp](https://leticiapauli122925.invisionapp.com/freehand/AppFut-FA7MzIBsS)                       | 
 |Gerenciamento do banco de dados|Firebase| [Firebase](xxxxxxxxx)                                                                             |
-|Gerenciamento de código-fonte|GitHub|                                                                                                                    |
-|Serviço de hospedagem da aplicação|LocalHost|[LocalHost](xxxxxx)                                                         |
+|Gerenciamento de código-fonte|GitHub|    [GitHub](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/489)                                                                                                                |
+|Serviço de hospedagem da aplicação|localhost|[localhost](xxxxxx)                                                         |
  
  
 
