@@ -10,7 +10,7 @@
 |--------------------|-----------------------------------------------------------------------------------------------------|
 |	Requisito Associado| Permitir que o usuário cadastre-se.                  |
 | Objetivo do Teste 	| Verificar se o usuário consegue se cadastrar no aplicativo.                                               |
-| Passos 	           | 1. Acessar o aplicativo<br>2. Clicar no incone do login<br>3. clicar no botão cadastrar<br>4. informar os dados necessários<br>5. Salvar dados<br>|
+| Passos 	           | 1. Acessar o aplicativo<br>2. Clicar no icone Criar Cadastro<br>3. informar os dados necessários<br>4. Clicar no botão cadastrar<br>|
 | Critério de Êxito  | Irá aparecer uma mensagem como: O cadastro foi realizado com sucesso.    |
 
  
@@ -39,41 +39,31 @@
 | **Caso de Teste** 	| **CT-05 - A aplicação deverá sortear os times com base nos participantes da lista semanal.**                                	|
 |--------------------|-----------------------------------------------------------------------------------------------------|
 |	Requisito Associado| RF-06 - A aplicação deverá sortear os times com base nos participantes da lista semanal.|
-| Objetivo do Teste 	| XXXXXX.               |
-| Passos 	           | XXXXXXXXXXXXXXXXX                                                                                              |
-| Critério de Êxito  | XXXXXXXXXXXXXXXXXXX|
+| Objetivo do Teste 	| O aplicativo deverá sortear os times.               |
+| Passos 	           | 1. Acessar o aplicativo <br> 2. Acessar partida<br> 3. Clicar no botão sortear times                                                                                              |
+| Critério de Êxito  | Verificar se o aplicativo fez sorteio dos jogadores conforme a lista de presença da partida|
 
 | **Caso de Teste** 	| **CT-06 - A aplicação deverá cronometrar as partidas.**                                	|
 |--------------------|-----------------------------------------------------------------------------------------------------|
 |	Requisito Associado| RF-07 - A aplicação deverá cronometrar as partidas.|
-| Objetivo do Teste 	| XXXXXXXXXXXXXXXXXX.               |
-| Passos 	           | XXXXXXXXXXXXXXXXXXXXXX                                                                                              |
-| Critério de Êxito  | XXXXXXXXXXXXXXX.|
+| Objetivo do Teste 	| O aplicativo deverá ter um cronômetro para ser utilizado nas partidas.               |
+| Passos 	           | 1. Acessar aplicativo<br> 2. Ir na aba Menu<br> 3. Clicar no botão cronômetro<br> 4. Clicar no botão iniciar                                                                                              |
+| Critério de Êxito  | O cronômetro deverá contar o tempo, parar quando clicar no botão e salvar o tempo quando clicar em parar.|
 
 | **Caso de Teste** 	| **CT-07 - A aplicação deverá armazenar as estatísticas dos marcadores e assistentes da partida..**                                	|
 |--------------------|-----------------------------------------------------------------------------------------------------|
 |	Requisito Associado| RF-08 - A aplicação deverá armazenar as estatísticas dos marcadores e assistentes da partida.|
-| Objetivo do Teste 	| XXXXXXXXXXXXXXXXXXXXXXXX               |
-| Passos 	           | XXXXXXXXXXXXXXXXXXXXXXXX                                                                                               |
-| Critério de Êxito  | XXXXXXXXXXXXXXXXXXXXXX|
+| Objetivo do Teste 	| O aplicativo irá armazenar as estatísticas e assistências das partidas               |
+| Passos 	           | 1. Acessar o aplicativo<br> 2. Ir na aba Menu<br> 3. Clicar no botão partidas<br> 4. Entrar na partida<br> 5. Clicar no botão ver estatísticas e assistências da partidas.                                                                                               |
+| Critério de Êxito  | Deverá conter as informações das estatísticas e assistências da partida|
 
 | **Caso de Teste** 	| **CT-08 - Pagamentos.**                                	|
 |--------------------|-----------------------------------------------------------------------------------------------------|
 |	Requisito Associado| RF-09 - A aplicação deverá informar aos semimensalistas e avulsos a chave PIX para pagamento. <br> RF-10 - A aplicação deverá permitir aos semimensalistas e avulsos informar o pagamento realizado.|
 | Objetivo do Teste 	| Permitir que o usuário acesse o QRCode do pix.               |
-| Passos 	           | XXXXXXXXXXXXXXXXXX                                                                                              |
+| Passos 	           | 1. Acessar o aplicativo<br> 2. Ir na aba Menu <br> 3. Clicar em pagamentos <br> 4. Ler o QRCODE                                                                                              |
 | Critério de Êxito  | Verificar se o usuário consegue fazer o pagamento via chave pix.<br> Verificar se o usuário consegue confirmar o pagamento.|
 
 
  
-## Ferramentas de Testes (Opcional)
 
-Comente sobre as ferramentas de testes utilizadas.
- 
-> **Links Úteis**:
-> - [IBM - Criação e Geração de Planos de Teste](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Práticas e Técnicas de Testes Ágeis](http://assiste.serpro.gov.br/serproagil/Apresenta/slides.pdf)
-> -  [Teste de Software: Conceitos e tipos de testes](https://blog.onedaytesting.com.br/teste-de-software/)
-> - [Criação e Geração de Planos de Teste de Software](https://www.ibm.com/developerworks/br/local/rational/criacao_geracao_planos_testes_software/index.html)
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
-> - [UX Tools](https://uxdesign.cc/ux-user-research-and-user-testing-tools-2d339d379dc7)
