@@ -9,14 +9,14 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 
 |Ambiente                       |Plataforma  |Link de acesso                                                                                                          |
 |---------------------------    |----------  |------------------------------------------------------------------------------------------------------------------------|
-|Repositório de código-fonte    |GitHub      |[GitHub](xxxxx)|
-|Documentos do projeto          |GitHub|[xxxxx](xxxxxx)                                | 
-|Gerenciamento do projeto       | xxxxx    |[xxxxx](xxxxx)                                  |
-|Gerenciamento de diagramas     |xxxxxx |[xxxxx](xxxxxxx)                                                    | 
-|Gerenciamento de wireframes    |xxxxxx|[xxxxxx](xxxxxxxx)                       | 
-|Gerenciamento do banco de dados|xxxxxx| [xxxxxxx](xxxxxxxxx)                                                                             |
-|Gerenciamento de código-fonte|xxxxxxxxxx|                                                                                                                    |
-|Serviço de hospedagem da aplicação|xxxxxxx|[xxxxxxx](xxxxxx)                                                         |
+|Repositório de código-fonte    |GitHub      |[GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t3-pmv-ads-2023-2-e3-proj-mov-t3-time1-fut/tree/main)|
+|Documentos do projeto          |GitHub|[GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t3-pmv-ads-2023-2-e3-proj-mov-t3-time1-fut/tree/main/docs)                               | 
+|Gerenciamento do projeto       | GitHub    |[GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t3-pmv-ads-2023-2-e3-proj-mov-t3-time1-fut/tree/main)                               |
+|Gerenciamento de diagramas     |brModelo |[brModelo](xxxxxxx)                                                    | 
+|Gerenciamento de wireframes    |InvisionApp|[InvisionApp](https://leticiapauli122925.invisionapp.com/freehand/AppFut-FA7MzIBsS)                       | 
+|Gerenciamento do banco de dados|Firebase| [Firebase](xxxxxxxxx)                                                                             |
+|Gerenciamento de código-fonte|GitHub|                                                                                                                    |
+|Serviço de hospedagem da aplicação|LocalHost|[LocalHost](xxxxxx)                                                         |
  
  
 
