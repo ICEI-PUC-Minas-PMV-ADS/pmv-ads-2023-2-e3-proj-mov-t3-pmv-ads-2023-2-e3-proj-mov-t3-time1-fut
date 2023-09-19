@@ -11,11 +11,11 @@ Os artefatos do projeto são desenvolvidos a partir de diversas plataformas e a 
 |---------------------------    |----------  |------------------------------------------------------------------------------------------------------------------------|
 |Repositório de código-fonte    |GitHub      |[GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t3-pmv-ads-2023-2-e3-proj-mov-t3-time1-fut/tree/main)|
 |Documentos do projeto          |GitHub|[GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t3-pmv-ads-2023-2-e3-proj-mov-t3-time1-fut/tree/main/docs)                               | 
-|Gerenciamento do projeto       | GitHub    |[GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t3-pmv-ads-2023-2-e3-proj-mov-t3-time1-fut/tree/main)                               |
+|Gerenciamento do projeto       | GitHub    |[GitHub](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/489)                               |
 |Gerenciamento de diagramas     |brModelo |[brModelo](xxxxxxx)                                                    | 
 |Gerenciamento de wireframes    |InvisionApp|[InvisionApp](https://leticiapauli122925.invisionapp.com/freehand/AppFut-FA7MzIBsS)                       | 
 |Gerenciamento do banco de dados|Firebase| [Firebase](xxxxxxxxx)                                                                             |
-|Gerenciamento de código-fonte|GitHub|    [GitHub](https://github.com/orgs/ICEI-PUC-Minas-PMV-ADS/projects/489)                                                                                                                |
+|Gerenciamento de código-fonte|GitHub|    [GitHub](https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t3-pmv-ads-2023-2-e3-proj-mov-t3-time1-fut/tree/main)                                                                                                                |
 |Serviço de hospedagem da aplicação|localhost|[localhost](xxxxxx)                                                         |
  
  
@@ -67,7 +67,7 @@ Para organização e distribuição das atividades do projeto, o XXXXX foi estru
 - Doing: atividades iniciadas e que ainda sem conclusão;
 - Done: atividades executadas e prontas para entrega.
  
-![xxxxx](xxxxxx)
+![GitHub](img/gerenciamento.png)
 
 Apresente a divisão de papéis entre os membros do grupo.
 
