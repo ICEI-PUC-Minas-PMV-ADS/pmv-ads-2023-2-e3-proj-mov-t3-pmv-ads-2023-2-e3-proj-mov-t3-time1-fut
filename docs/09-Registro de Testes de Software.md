@@ -1,12 +1,16 @@
 # Registro de Testes de Software
 
-<span style="color:red">Pré-requisitos: <a href="3-Projeto de Interface.md"> Projeto de Interface</a></span>, <a href="8-Plano de Testes de Software.md"> Plano de Testes de Software</a>
 
-Relatório com as evidências dos testes de software realizados no sistema pela equipe, baseado em um plano de testes pré-definido.
+
+https://github.com/ICEI-PUC-Minas-PMV-ADS/pmv-ads-2023-2-e3-proj-mov-t3-pmv-ads-2023-2-e3-proj-mov-t3-time1-fut/assets/110863711/c38a31b0-678e-4ac8-8c03-3d216d1c6685
+
+
+
 
 ## Avaliação
 
-Discorra sobre os resultados do teste. Ressaltando pontos fortes e fracos identificados na solução. Comente como o grupo pretende atacar esses pontos nas próximas iterações. Apresente as falhas detectadas e as melhorias geradas a partir dos resultados obtidos nos testes.
+CT-01 - Cadastrar usuário
+A aplicação deve permitir que qualquer usuário possa se cadastrar no site.
 
-> **Links Úteis**:
-> - [Ferramentas de Test para Java Script](https://geekflare.com/javascript-unit-testing/)
+Os usuários conseguiram se cadastrar com sucesso, e no caso de um eventual erro, uma mensagem aparece especificando exatamente o que o usuário precisa fazer para se cadastrar corretamente, facilitando para que o cliente não tenha tantas dúvidas ao usar o sistema.
+
