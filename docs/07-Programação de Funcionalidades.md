@@ -6,10 +6,16 @@ Implementação do sistema descritas por meio dos requisitos funcionais e/ou nã
 
 Para cada requisito funcional, pode ser entregue um artefato desse tipo
 
-> **Links Úteis**:
->
-> - [Trabalhando com HTML5 Local Storage e JSON](https://www.devmedia.com.br/trabalhando-com-html5-local-storage-e-json/29045)
-> - [JSON Tutorial](https://www.w3resource.com/JSON)
-> - [JSON Data Set Sample](https://opensource.adobe.com/Spry/samples/data_region/JSONDataSetSample.html)
-> - [JSON - Introduction (W3Schools)](https://www.w3schools.com/js/js_json_intro.asp)
-> - [JSON Tutorial (TutorialsPoint)](https://www.tutorialspoint.com/json/index.htm)
+|ID                       |Descrição do Requisito  |Artefato(s) produzido(s)                                                                                                          |
+|---------------------------    |----------  |------------------------------------------------------------------------------------------------------------------------|
+|RF-01    |  Permitir que o usuário cadastre-se.   ||
+|RF-02        |Permitir que o usuário crie sua pelada.                               | 
+|RF-03      | Permitir que o usuário associe-se à uma pelada.    |                               |
+|RF-04     |Permitir que o usuário crie a lista de presença semanal. |                                                   | 
+|RF-05   |Permitir que o usuário manifeste sua presença ou ausência na lista semanal.|                       | 
+|RF-06|A aplicação deverá sortear os times com base nos participantes da lista semanal.|                                                                              |
+|RF-07|A aplicação deverá cronometrar as partidas.|                                                                                                                   |
+|RF-08|A aplicação deverá armazenar as estatísticas dos marcadores e assistentes da partida.|                                                         |
+|RF-09|A aplicação deverá informar aos semimensalistas e avulsos a chave PIX para pagamento.|                                                         |
+|RF-10|A aplicação deverá permitir aos semimensalistas e avulsos informar o pagamento realizado.|                                                         |
+ 
