@@ -29,6 +29,7 @@ O Esquema Relacional corresponde à representação dos dados em tabelas juntame
 
 Entregar um arquivo banco.sql contendo os scripts de criação das tabelas do banco de dados. Este arquivo deverá ser incluído dentro da pasta src\bd.
 
+```
 -- Tabela USUARIO
 CREATE TABLE USUARIO (
     id_usuario INT NOT NULL PRIMARY KEY AUTO_INCREMENT,
@@ -130,7 +131,7 @@ CREATE TABLE RANKING_USUARIO (
     FOREIGN KEY (pontuacaoGeral) REFERENCES USUARIO(pontuacao),
     FOREIGN KEY (id_Ranking) REFERENCES RANKING(id_Ranking)
 );
-
+```
 
 ## Tecnologias Utilizadas
 
