@@ -1,23 +1,19 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
 
 export const Container = styled.SafeAreaView`
-  flex-direction: row;
-  align-items: center;
-  justify-content: flex-start;
-  margin-top: 30px;
-  margin-left: 15px;
-  margin-bottom: 15px;
   width: 100%;
-  max-height: 60px;
+  background-color: #353840;
+  align-items: center;
+  justify-content: center;
+  padding-top: 15px;
+  border-bottom-width: 1px;
+  border-bottom-color: #C7C7C7;
 `;
 
 export const Title = styled.Text`
-  font-size: 22px;
-  margin-left: 8px;
-`;
+  font-size: 27px;
+  font-weight: bold;
+  padding-bottom: 15px;
+  color: #FFF;
 
-export const ButtonMenu = styled.TouchableOpacity`
-  justify-content: center;
-  align-items: center;
 `;
-

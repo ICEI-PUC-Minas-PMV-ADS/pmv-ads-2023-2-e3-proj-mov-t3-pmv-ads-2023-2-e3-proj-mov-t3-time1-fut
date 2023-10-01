@@ -1,53 +1,94 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
 
-export const Container = styled.SafeAreaView`
-  flex: 1;
-  background-color: #F0F4FF;
+export const Container = styled.View`
+  flex:1;
   align-items: center;
-`;
-
-export const Message = styled.Text`
-  font-size: 18px;
-  font-weight: bold;
-  margin-top: 24px;
+  background-color: #353840;
 `;
 
 export const Name = styled.Text`
-  font-size: 24px;
-  margin-bottom: 24px;
-  margin-top: 8px;
-  padding: 0 14px;
-  color: #121212;
-`;
-
-export const NewLink = styled.TouchableOpacity`
-  background-color: #3b3dbf;
-  width: 90%;
-  height: 45px;
-  border-radius: 8px;
-  align-items: center;
-  justify-content: center;
-  margin-bottom: 14px;
-`;
-
-export const NewText = styled.Text`
-  font-size: 18px;
+  margin-top: 20px;
+  margin-right: 20px;
+  margin-left: 20px;
+  font-size: 28px;
   font-weight: bold;
   color: #FFF;
 `;
 
-export const LogoutButton = styled.TouchableOpacity`
-  justify-content: center;
-  align-items: center;
-  width: 90%;
-  height: 45px;
-  border-width: 1px;
-  border-radius: 8px;
-  border-color: #c62c36;
+export const Email = styled.Text`
+color: #FFF;
+margin-right: 20px;
+margin-left: 20px;
+margin-top: 10px;
+font-size: 18px;
+font-style: italic;
 `;
 
-export const LogoutText = styled.Text`
-  font-size: 18px;
-  font-weight: bold;
-  color: #c62c36;
+export const Button = styled.TouchableOpacity`
+margin-top: 16px;
+background-color: ${props => props.bg};
+width: 80%;
+height: 50px;
+border-radius: 4px;
+align-items: center;
+justify-content: center;
 `;
+
+export const ButtonText = styled.Text`
+  font-size: 18px;
+  color: ${props => props.color};
+`;
+
+export const UploadButton = styled.TouchableOpacity`
+ margin-top: 10%;
+ background-color: #FFF;
+ width: 150px;
+ height: 150px;
+ border-radius: 90px; 
+ justify-content: center;
+ align-items: center;
+ z-index: 8;
+`;
+
+export const UploadText = styled.Text`
+font-size: 55px;
+position: absolute;
+color: #E52246;
+opacity: 0.5;
+z-index: 99;
+`;
+
+export const Avatar = styled.Image`
+  width: 140px;
+  height: 140px;
+  border-radius: 80px;
+`;
+
+export const ModalContainer = styled.KeyboardAvoidingView`
+width: 100%;
+height: 70%;
+background-color: #FFF;
+position: absolute;
+bottom: 0;
+align-items: center;
+justify-content: center;
+`;
+
+export const ButtonBack = styled.TouchableOpacity`
+  position: absolute;
+  top: 15px;
+  left: 25px;
+  flex-direction: row;
+  align-items: center;
+`;
+
+export const Input = styled.TextInput`
+  background-color: #DDD;
+  width: 90%;
+  border-radius: 4px;
+  padding: 10px;
+  font-size: 18px;
+  color: #121212;
+  text-align: center;
+`;
+
