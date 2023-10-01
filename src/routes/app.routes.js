@@ -1,46 +1,100 @@
 import React from 'react';
-import { createDrawerNavigator } from '@react-navigation/drawer';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
+import Feather from 'react-native-vector-icons/Feather'
 
 import Home from '../pages/Home';
-import New from '../pages/New';
-import Profile from '../pages/Profile'
+import Profile from '../pages/Profile';
+import Search from '../pages/Search';
+import NewPost from '../pages/NewPost';
+import PostsUser from '../pages/PostsUser'
 
-const AppDrawer = createDrawerNavigator();
+
+const Tab = createBottomTabNavigator();
+const Stack = createNativeStackNavigator();
+
+function StackRoutes(){
+  return(
+    <Stack.Navigator>
+      <Stack.Screen 
+      name="Home" 
+      component={Home} 
+      options={{ headerShown: false }}
+      />
+
+      <Stack.Screen 
+      name="NewPost" 
+      component={NewPost} 
+      options={{
+        title: 'Novo Post',
+        headerTintColor: '#FFF',
+        headerStyle:{
+          backgroundColor: '#36393F'
+        }
+      }}
+      />
+
+      <Stack.Screen 
+        name="PostsUser"
+        component={PostsUser}
+        options={{
+          headerTintColor: '#FFF',
+          headerStyle:{
+            backgroundColor: '#36393F'
+          }
+        }}
+      />
+
+    </Stack.Navigator>
+  )
+}
+
 
 function AppRoutes(){
   return(
-    <AppDrawer.Navigator
+    <Tab.Navigator
       screenOptions={{
-        headerShown:false,
+        headerShown: false,
+        tabBarHideOnKeyboard: true,
+        tabBarShowLabel: false,
+        tabBarActiveTintColor: '#FFF',
 
-        drawerStyle:{
-          backgroundColor: '#FFF',
-          paddingTop: 20,
-        },
-
-        drawerActiveBackgroundColor:'#3b3dbf',
-        drawerActiveTintColor: '#FFF',
-
-        drawerInactiveBackgroundColor: '#F0F2FF',
-        drawerInactiveTintColor: '#121212'
-
+        tabBarStyle:{
+          backgroundColor: '#202225',
+          borderTopWidth: 0
+        }
       }}
     >
-      <AppDrawer.Screen
-        name="Home"
-        component={Home}
+      <Tab.Screen 
+      name="HomeTab" 
+      component={StackRoutes} 
+      options={{
+        tabBarIcon: ({ color, size }) => {
+          return <Feather name="home" color={color} size={size} />
+        }
+      }}
       />
 
-      <AppDrawer.Screen
-        name="Registrar"
-        component={New}
+      <Tab.Screen 
+      name="Search"
+      component={Search}
+      options={{
+        tabBarIcon: ({ color, size }) => {
+          return <Feather name="search" color={color} size={size} />
+        }
+      }}
       />
 
-      <AppDrawer.Screen
-        name="Perfil"
-        component={Profile}
+      <Tab.Screen 
+      name="Profile" 
+      component={Profile}
+      options={{
+        tabBarIcon: ({ color, size }) => {
+          return <Feather name="user" color={color} size={size} />
+        }
+      }}
       />
-    </AppDrawer.Navigator>
+    </Tab.Navigator>
   )
 }
 

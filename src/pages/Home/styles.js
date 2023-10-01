@@ -1,37 +1,24 @@
-import styled from 'styled-components/native';
+import styled from "styled-components/native";
 
-export const Background = styled.SafeAreaView`
+export const Container = styled.View`
   flex:1;
-  background-color: #F0F4FF;
+  background-color: #36393F;
 `;
 
-export const ListBalance = styled.FlatList`
-  max-height: 190px;
+export const ButtonPost = styled.TouchableOpacity`
+  position: absolute;
+  bottom: 5%;
+  right: 6%;
+  width: 60px;
+  height: 60px;
+  background-color: #202225;
+  border-radius: 30px;
+  justify-content: center;
+  align-items: center;
+  z-index: 99;
 `;
 
-export const Area = styled.View`
-  margin-top: 22px;
-  background-color: #FFF;
-  border-top-left-radius: 15px;
-  border-top-right-radius: 15px;
-  flex-direction: row;
-  padding-left: 14px;
-  padding-right: 14px;
-  padding-top: 14px;
-  align-items: baseline
-`;
-
-export const Title = styled.Text`
-  margin-left: 4px;
-  color: #121212;
-  margin-bottom: 14px;
-  font-weight: bold;
-  font-size: 18px;
-
-`;
-
-export const List = styled.FlatList`
+export const ListPosts = styled.FlatList`
   flex:1;
-  background-color: #FFF;
+  background-color: #F1F1F1;
 `;
-

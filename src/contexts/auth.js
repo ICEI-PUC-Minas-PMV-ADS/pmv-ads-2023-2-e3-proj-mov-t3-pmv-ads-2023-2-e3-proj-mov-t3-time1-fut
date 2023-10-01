@@ -1,120 +1,125 @@
-import React, { createContext, useState, useEffect } from 'react';
+import React, { useState, createContext, useEffect } from 'react';
 
-import api from '../services/api';
-import { useNavigation } from '@react-navigation/native';
+import auth from '@react-native-firebase/auth';
+import firestore from '@react-native-firebase/firestore';
 
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export const AuthContext = createContext({});
 
 function AuthProvider({ children }){
-  const [user, setUser] = useState(null); 
-  const [loadingAuth, setLoadingAuth] = useState(false);
+  const [user, setUser] = useState(null);
   const [loading, setLoading] = useState(true);
 
-  const navigation = useNavigation();
+  const [loadingAuth, setLoadingAuth] = useState(false);
 
-
-  useEffect(() => {
-    async function loadStorage(){
-      const storageUser = await AsyncStorage.getItem('@finToken');
+  useEffect(()=> {
+    async function loadStoarge(){
+      const storageUser = await AsyncStorage.getItem('@devapp');
 
       if(storageUser){
-
-        const response = await api.get('/me', {
-          headers:{
-            'Authorization': `Bearer ${storageUser}`
-          }
-        })
-        .catch(()=>{
-          setUser(null);
-        })
-
-        api.defaults.headers['Authorization'] = `Bearer ${storageUser}`;
-        setUser(response.data);
+        setUser(JSON.parse(storageUser))
         setLoading(false);
-
       }
+
 
       setLoading(false);
 
     }
 
-    loadStorage();
+    loadStoarge();
   }, [])
 
 
-  async function signUp(email, password, nome){
+
+  async function signUp(email, password, name){
     setLoadingAuth(true);
 
-    try{
-      const response = await api.post('/users', {
-       name: nome,
-       password: password,
-       email: email,
+    await auth().createUserWithEmailAndPassword(email, password)
+    .then(async (value) => {
+      let uid = value.user.uid;
+      await firestore().collection('users')
+      .doc(uid).set({
+        nome: name,
+        createdAt: new Date(),
       })
+      .then(() => {
+        let data = {
+          uid: uid,
+          nome: name,
+          email: value.user.email
+        }
+
+        setUser(data);
+        storageUser(data);
+        setLoadingAuth(false);
+
+      })
+
+    })
+    .catch((error) => {
+      console.log(error);
       setLoadingAuth(false);
-
-      navigation.goBack();
-
-
-    }catch(err){
-      console.log("ERRO AO CADASTRAR", err);
-      setLoadingAuth(false);
-    }
+    })
   }
+
 
   async function signIn(email, password){
     setLoadingAuth(true);
 
-    try{
-      const response = await api.post('/login', {
-        email: email,
-        password: password
-      })
+    await auth().signInWithEmailAndPassword(email, password)
+    .then( async (value) => {
+      let uid = value.user.uid;
 
-      const { id, name, token } = response.data;
+      const userProfile = await firestore().collection('users')
+      .doc(uid).get();
 
-      const data = {
-        id,
-        name,
-        token,
-        email,
+      //console.log(userProfile.data().nome)
+      let data = {
+        uid: uid,
+        nome: userProfile.data().nome,
+        email: value.user.email
       };
-
-      await AsyncStorage.setItem('@finToken', token);
-
-      api.defaults.headers['Authorization'] = `Bearer ${token}`;
-
-      setUser({
-        id,
-        name,
-        email,
-      })
-
+      
+      setUser(data);
+      storageUser(data);
       setLoadingAuth(false);
 
-    }catch(err){
-      console.log("ERRO AO LOGAR ", err);
+    })
+    .catch((error)=>{
+      console.log(error);
       setLoadingAuth(false);
-    }
-
+    })
   }
 
 
   async function signOut(){
+    await auth().signOut();
     await AsyncStorage.clear()
-    .then(() => {
+    .then( () => {
       setUser(null);
     })
   }
 
+  async function storageUser(data){
+    await AsyncStorage.setItem('@devapp', JSON.stringify(data))
+  }
+
   return(
-    <AuthContext.Provider value={{ signed: !!user, user, signUp, signIn, signOut, loadingAuth, loading }}>
+    <AuthContext.Provider value={{ 
+      signed: !!user, 
+      signUp, 
+      signIn, 
+      signOut, 
+      loadingAuth, 
+      loading, 
+      user,
+      setUser,
+      storageUser 
+      }}>
       {children}
     </AuthContext.Provider>
   )
 }
 
 export default AuthProvider;
-
