@@ -1,13 +1,15 @@
 import React from 'react';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import Feather from 'react-native-vector-icons/Feather'
+import Feather from'react-native-vector-icons/Feather';
 
 import Home from '../pages/Home';
 import Profile from '../pages/Profile';
 import Search from '../pages/Search';
 import NewPost from '../pages/NewPost';
-import PostsUser from '../pages/PostsUser'
+import CreateMatch from '../pages/NovaPelada';
+import PostsUser from '../pages/PostsUser';
+import MyMatchs from '../pages/MyMatchs';
 
 
 const Tab = createBottomTabNavigator();
@@ -40,7 +42,19 @@ function StackRoutes(){
         options={{
           headerTintColor: '#FFF',
           headerStyle:{
-            backgroundColor: '#36393F'
+          backgroundColor: '#36393F'
+          }
+        }}
+      />
+
+      <Stack.Screen 
+        name="CreateMatch" 
+        component={CreateMatch}
+        options={{ 
+          title: 'Nova Pelada',
+          headerTintColor: '#FFF',
+          headerStyle:{
+          backgroundColor: '#36393F'
           }
         }}
       />
@@ -86,6 +100,16 @@ function AppRoutes(){
       />
 
       <Tab.Screen 
+      name="MyMatchs"
+      component={MyMatchs}
+      options={{
+      tabBarIcon: ({ color, size }) => {
+        return <Feather name="clipboard" color={color} size={size} />
+      }
+      }}
+      />
+
+      <Tab.Screen 
       name="Profile" 
       component={Profile}
       options={{
@@ -94,6 +118,7 @@ function AppRoutes(){
         }
       }}
       />
+
     </Tab.Navigator>
   )
 }

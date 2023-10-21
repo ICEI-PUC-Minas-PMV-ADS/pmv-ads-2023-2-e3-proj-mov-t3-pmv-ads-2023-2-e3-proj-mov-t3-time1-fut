@@ -184,7 +184,7 @@ function Profile(){
         <ButtonText color="#FFF">Atualizar Perfil</ButtonText>
       </Button>
 
-      <Button bg="#428cfd">
+      <Button bg="#428cfd" onPress={ () => navigation.navigate("CreateMatch")}>
         <ButtonText color="#FFF">Criar Partida</ButtonText>
       </Button>
 

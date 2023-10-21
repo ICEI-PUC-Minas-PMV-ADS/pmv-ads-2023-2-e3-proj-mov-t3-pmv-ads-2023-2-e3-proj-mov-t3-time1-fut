@@ -2,20 +2,19 @@ import React, { useState, useContext, useCallback } from 'react';
 import { View, Text, ActivityIndicator } from 'react-native';
 
 import { useNavigation, useFocusEffect } from '@react-navigation/native'
-import Feather from 'react-native-vector-icons/Feather';
 import { AuthContext } from '../../contexts/auth'
 import firestore from '@react-native-firebase/firestore';
 
-import { Container, ButtonPost, ListPosts, ButtonCreateMatch } from './styles';
+import { Container, ListMatchs } from './styles';
+import MatchsList from '../../components/MatchsList';
 
 import Header from '../../components/Header'
-import PostsList from '../../components/PostsList';
 
-function Home(){
+function MyMatchs(){
   const navigation = useNavigation();
   const { user } = useContext(AuthContext);
 
-  const [posts, setPosts] = useState([]);
+  const [matchs, setMatchs] = useState([]);
   const [loading, setLoading] = useState(true);
 
   const [loadingRefresh, setLoadingRefresh] = useState(false);
@@ -27,37 +26,33 @@ function Home(){
     useCallback(() => {
       let isActive = true;
 
-      function fetchPosts(){
-        firestore().collection('posts')
+      function fetchMatchs(){
+        firestore().collection('matchs')
         .orderBy('created', 'desc')
         .limit(5)
         .get()
         .then((snapshot) => {
 
           if(isActive){
-            setPosts([]);
-            const postList = [];
+            setMatchs([]);
+            const matchsList = [];
 
             snapshot.docs.map( u => {
-              postList.push({
+              matchsList.push({
                 ...u.data(),
                 id: u.id,
               })
             })
 
             setEmptyList(!!snapshot.empty)
-            setPosts(postList);
+            setMatchs(matchsList);
             setLastItem(snapshot.docs[snapshot.docs.length -1])
             setLoading(false);
-
-
           }
 
         })
-
       }
-
-      fetchPosts();
+      fetchMatchs();
 
 
     return () => {
@@ -68,28 +63,27 @@ function Home(){
   )
 
 
-  // Buscar mais posts quando puxar a sua lista para cima.
-  async function handleRefreshPosts(){
+  async function handleRefreshMatchs(){
     setLoadingRefresh(true);
 
-    firestore().collection('posts')
+    firestore().collection('matchs')
     .orderBy('created', 'desc')
     .limit(5)
     .get()
     .then((snapshot) => {
 
-      setPosts([]);
-      const postList = [];
+      setMatchs([]);
+      const matchsList = [];
 
       snapshot.docs.map( u => {
-        postList.push({
+        matchsList.push({
           ...u.data(),
           id: u.id,
         })
       })
 
       setEmptyList(false)
-      setPosts(postList);
+      setMatchs(matchsList);
       setLastItem(snapshot.docs[snapshot.docs.length -1])
       setLoading(false);
 
@@ -99,26 +93,24 @@ function Home(){
 
   }
 
-  // Buscar mais posts ao chegar no final da lista
-  async function getListPosts(){
+  async function getListMatchs(){
     if(emptyList){
-      // Se buscou toda a sua lista, tiramos o loadind.
       setLoading(false);
       return null;
     }
 
     if(loading) return;
 
-    firestore().collection('posts')
+    firestore().collection('matchs')
     .orderBy('created', 'desc')
     .limit(5)
     .startAfter(lastItem)
     .get()
     .then( (snapshot) => {
-      const postList = [];
+      const matchsList = [];
 
       snapshot.docs.map ( u => {
-        postList.push({
+        matchsList.push({
           ...u.data(),
           id: u.id,
         })
@@ -126,7 +118,7 @@ function Home(){
 
       setEmptyList(!!snapshot.empty)
       setLastItem(snapshot.docs[snapshot.docs.length -1])
-      setPosts(oldPosts => [...oldPosts, ...postList]);
+      setMatchs(oldMatchs => [...oldMatchs, ...matchsList]);
       setLoading(false);
     })
 
@@ -135,56 +127,44 @@ function Home(){
   return(
     <Container>
       <Header/>
-
+        <View style={{justifyContent: 'center', alignItems: 'center', backgroundColor: '#F1F1F1'}}>
+            <Text style={{
+                fontSize: 30,
+                justifyContent: 'center',
+                alignItems: 'center',
+                fontFamily: 'Arial',
+                fontWeight: 'bold',
+            }}>
+            Minhas Peladas
+            </Text>
+        </View>
 
       { loading ? (
         <View style={{flex:1, justifyContent: 'center', alignItems: 'center'}}>
           <ActivityIndicator size={50} color="#E52246"/>
         </View>
       ) : (
-        <ListPosts
+        <ListMatchs
           showsVerticalScrollIndicator={false}
-          data={posts}
+          data={matchs}
           renderItem={ ({ item }) => ( 
-            <PostsList
+            <MatchsList
               data={item}
               userId={user?.uid}
             />
            )  }
 
            refreshing={loadingRefresh}
-           onRefresh={ handleRefreshPosts }
+           onRefresh={ handleRefreshMatchs }
 
-           onEndReached={() => getListPosts() }
+           onEndReached={() => getListMatchs() }
            onEndReachedThreshold={0.1}
 
         />
       )}
 
-
-      <ButtonPost 
-      activeOpacity={0.8}
-      onPress={ () => navigation.navigate("NewPost") }
-      >
-        <Feather
-          name="edit-2"
-          color="#FFF"
-          size={25}
-        />
-      </ButtonPost>
-
-      <ButtonCreateMatch 
-      activeOpacity={0.8}
-      onPress={ () => navigation.navigate("CreateMatch") }
-      >
-        <Feather
-          name="dribbble"
-          color="#FFF"
-          size={25}
-        />
-      </ButtonCreateMatch>
     </Container>
   )
 }
 
-export default Home;
+export default MyMatchs;
