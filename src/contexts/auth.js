@@ -1,4 +1,5 @@
 import React, { useState, createContext, useEffect } from 'react';
+import { Alert } from 'react-native';
 
 import auth from '@react-native-firebase/auth';
 import firestore from '@react-native-firebase/firestore';
@@ -58,7 +59,7 @@ function AuthProvider({ children }){
 
     })
     .catch((error) => {
-      console.log(error);
+      Alert.alert("error");
       setLoadingAuth(false);
     })
   }
@@ -74,7 +75,6 @@ function AuthProvider({ children }){
       const userProfile = await firestore().collection('users')
       .doc(uid).get();
 
-      //console.log(userProfile.data().nome)
       let data = {
         uid: uid,
         nome: userProfile.data().nome,
@@ -87,7 +87,7 @@ function AuthProvider({ children }){
 
     })
     .catch((error)=>{
-      console.log(error);
+      Alert.alert("Login ou senha inválidos");
       setLoadingAuth(false);
     })
   }

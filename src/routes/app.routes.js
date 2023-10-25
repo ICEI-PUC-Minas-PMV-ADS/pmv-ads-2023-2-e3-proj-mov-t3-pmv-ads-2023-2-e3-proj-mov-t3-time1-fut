@@ -10,6 +10,7 @@ import NewPost from '../pages/NewPost';
 import CreateMatch from '../pages/NovaPelada';
 import PostsUser from '../pages/PostsUser';
 import MyMatchs from '../pages/MyMatchs';
+import StopWatch from '../pages/StopWatch';
 
 
 const Tab = createBottomTabNavigator();
@@ -52,6 +53,18 @@ function StackRoutes(){
         component={CreateMatch}
         options={{ 
           title: 'Nova Pelada',
+          headerTintColor: '#FFF',
+          headerStyle:{
+          backgroundColor: '#36393F'
+          }
+        }}
+      />
+
+      <Stack.Screen 
+        name="StopWatch" 
+        component={StopWatch}
+        options={{ 
+          title: 'Cronometro',
           headerTintColor: '#FFF',
           headerStyle:{
           backgroundColor: '#36393F'

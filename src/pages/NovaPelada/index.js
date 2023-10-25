@@ -10,6 +10,9 @@ import { AuthContext } from '../../contexts/auth'
 function CreateMatch() {
   const [teamA, setTeamA] = useState('');
   const [teamB, setTeamB] = useState('');
+  const [matchDate, setMatchDate] = useState('');
+  const [matchTime, setMatchTime] = useState('');
+  const [matchLocation, setMatchLocation] = useState('');
   const navigation = useNavigation();
   const { user } = useContext(AuthContext);
 
@@ -37,10 +40,16 @@ function CreateMatch() {
       autor: user?.nome,
       userId: user?.uid,
       avatarUrl,
+      matchLocation: matchLocation,
+      matchTime: matchTime,
+      matchDate: matchDate
     })
     .then( () => {
       setTeamA('');
       setTeamB('');
+      setMatchDate('');
+      setMatchTime('');
+      setMatchLocation('');
       Alert.alert("Sucesso", `Partida criada entre ${teamA} e ${teamB}!`);
     })
     .catch((error)=>{
@@ -62,6 +71,24 @@ function CreateMatch() {
         placeholder="Nome do Time B"
         value={teamB}
         onChangeText={setTeamB}
+        style={styles.input}
+      />
+      <TextInput
+        placeholder="Data da pelada"
+        value={matchDate}
+        onChangeText={setMatchDate}
+        style={styles.input}
+      />
+      <TextInput
+        placeholder="Horario da pelada"
+        value={matchTime}
+        onChangeText={setMatchTime}
+        style={styles.input}
+      />
+      <TextInput
+        placeholder="Local da pelada"
+        value={matchLocation}
+        onChangeText={setMatchLocation}
         style={styles.input}
       />
       <Button title="Criar Partida" onPress={handleCreateMatch} />

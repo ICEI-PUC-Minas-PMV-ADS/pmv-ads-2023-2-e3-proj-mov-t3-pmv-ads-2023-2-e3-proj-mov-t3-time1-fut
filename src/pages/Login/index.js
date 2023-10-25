@@ -1,5 +1,5 @@
 import React, { useState, useContext }  from 'react';
-import { View, Text, ActivityIndicator } from 'react-native';
+import { View, Text, ActivityIndicator, Alert } from 'react-native';
 
 import { Container, Title, Input, Button, ButtonText, SignUpButton, SignUpText} from './styles';
 
@@ -27,7 +27,7 @@ function Login(){
 
   async function handleSignIn(){
     if(email === '' || password === ''){
-      console.log("PREENCHA TODOS OS CAMPOS")
+      Alert.alert("PREENCHA TODOS OS CAMPOS")
       return;
     }
 
@@ -38,7 +38,7 @@ function Login(){
   async function handleSignUp(){
    
     if(name === '' || email === '' || password === ''){
-      console.log("PREENCHA TODOS OS CAMPOS PARA CADASTRAR")
+      Alert.alert("PREENCHA TODOS OS CAMPOS PARA CADASTRAR")
       return;
     }
 
