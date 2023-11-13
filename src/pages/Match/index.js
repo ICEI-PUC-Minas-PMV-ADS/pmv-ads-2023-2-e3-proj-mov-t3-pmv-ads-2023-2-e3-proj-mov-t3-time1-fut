@@ -26,37 +26,69 @@ function Match({ route, navigation }) {
     return () => unsubscribe();
   }, [matchId]);
 
-  function handleJoinTeamA() {
-  const matchRef = firestore().collection('matchs').doc(matchId);
+function handleJoinTeamA() {
 
-  // Adicione o nome do usuário ao array de TimeA no Firestore
-  const teste = firestore().collection('matchRegistrations');
-  const newDocumentRef = teste.doc();
+  const matchRegistrationRef = firestore().collection('matchRegistrations').doc(matchId);
 
-  newDocumentRef.set({
-  matchId : matchId,
-  TimeA : [user.nome] // Substitua os itens pelo que desejar
-  }).then(() => {
-  console.log('Novo documento criado com sucesso');
+  // Verificar se o documento já existe
+  matchRegistrationRef.get().then((docSnapshot) => {
+    if (docSnapshot.exists) {
+      // Se o documento existir, atualize o array TimeA
+      matchRegistrationRef.update({
+        TimeA: firestore.FieldValue.arrayUnion(user.nome)
+      }).then(() => {
+        console.log('Usuário adicionado ao TimeA com sucesso');
+      }).catch((error) => {
+        console.error('Erro ao adicionar usuário ao TimeA:', error);
+      });
+    } else {
+      // Se o documento não existir, crie um novo documento
+      matchRegistrationRef.set({
+        matchId: matchId,
+        TimeA: [user.nome]
+      }).then(() => {
+        console.log('Novo documento criado com sucesso');
+      }).catch((error) => {
+        console.error('Erro ao criar o novo documento:', error);
+      });
+    }
   }).catch((error) => {
-  console.error('Erro ao criar o novo documento:', error);
+    console.error('Erro ao verificar a existência do documento:', error);
   });
-
+  Alert.alert("Sucesso", `cadastrado no time ${matchData.TimeA}`);
 }
 
 
-  function handleJoinTeamB() {
+function handleJoinTeamB() {
 
-    firestore().collection('matchRegistrations')
-    .add({
-      TimeB: user?.nome
-    })
-    .then( () => {
-      setTeamB('');
-    })
-    
-    Alert.alert("Sucesso", `cadastrado no time ${matchData.TimeB}`);
-    
+  const matchRegistrationRef = firestore().collection('matchRegistrations').doc(matchId);
+
+  // Verificar se o documento já existe
+  matchRegistrationRef.get().then((docSnapshot) => {
+    if (docSnapshot.exists) {
+      // Se o documento existir, atualize o array TimeA
+      matchRegistrationRef.update({
+        TimeB: firestore.FieldValue.arrayUnion(user.nome)
+      }).then(() => {
+        console.log('Usuário adicionado ao TimeA com sucesso');
+      }).catch((error) => {
+        console.error('Erro ao adicionar usuário ao TimeB:', error);
+      });
+    } else {
+      // Se o documento não existir, crie um novo documento
+      matchRegistrationRef.set({
+        matchId: matchId,
+        TimeB: [user.nome]
+      }).then(() => {
+        console.log('Novo documento criado com sucesso');
+      }).catch((error) => {
+        console.error('Erro ao criar o novo documento:', error);
+      });
+    }
+  }).catch((error) => {
+    console.error('Erro ao verificar a existência do documento:', error);
+  });
+    Alert.alert("Sucesso", `cadastrado no time ${matchData.TimeB}`); 
   };
 
   const handleStartMatch = () => {
@@ -66,6 +98,7 @@ function Match({ route, navigation }) {
   const handleRateMatch = () => {
     navigation.navigate("RatingMatch")   
   };
+
 
   if (!matchData) {
     return (
@@ -101,6 +134,12 @@ function Match({ route, navigation }) {
       <Button bg="#428cfd" onPress={handleRateMatch}>
         <ButtonText color="#FFF">Avaliar Pelada</ButtonText>
       </Button>
+
+      <Button bg="#428cfd" onPress={() => navigation.navigate("ConfirmationList", { matchId: matchId})}>
+        <ButtonText color="#FFF">Lista de Presença</ButtonText>
+      </Button>
+
+
 
     </Container>
   );

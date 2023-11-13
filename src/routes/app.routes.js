@@ -15,6 +15,7 @@ import MatchOptions from '../pages/MatchOptions'
 import SearchMatch from '../pages/SearchMatch'
 import Match from '../pages/Match'
 import RatingMatch from '../pages/RatingPage';
+import ConfirmationList from '../pages/ConfirmationList';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -97,6 +98,18 @@ function StackRoutes(){
         component={RatingMatch}
         options={{ 
           title: 'Avaliar Pelada',
+          headerTintColor: '#FFF',
+          headerStyle:{
+          backgroundColor: '#36393F'
+          }
+        }}
+      />
+
+      <Stack.Screen 
+        name="ConfirmationList" 
+        component={ConfirmationList}
+        options={{ 
+          title: 'Lista de Presença',
           headerTintColor: '#FFF',
           headerStyle:{
           backgroundColor: '#36393F'
