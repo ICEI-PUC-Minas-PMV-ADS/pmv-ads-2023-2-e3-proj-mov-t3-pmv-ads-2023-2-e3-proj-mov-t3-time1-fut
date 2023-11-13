@@ -11,7 +11,10 @@ import CreateMatch from '../pages/NovaPelada';
 import PostsUser from '../pages/PostsUser';
 import MyMatchs from '../pages/MyMatchs';
 import StopWatch from '../pages/StopWatch';
-
+import MatchOptions from '../pages/MatchOptions'
+import SearchMatch from '../pages/SearchMatch'
+import Match from '../pages/Match'
+import RatingMatch from '../pages/RatingPage';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -49,10 +52,51 @@ function StackRoutes(){
       />
 
       <Stack.Screen 
+        name="MatchOptions" 
+        component={MatchOptions}
+        options={{ 
+          headerTintColor: '#FFF',
+          headerStyle:{
+          backgroundColor: '#36393F'
+          }
+         }}
+      />
+
+      <Stack.Screen 
+      name="Match" 
+      component={Match} 
+      options={{ headerShown: false }}
+      />
+
+      <Stack.Screen 
         name="CreateMatch" 
         component={CreateMatch}
         options={{ 
           title: 'Nova Pelada',
+          headerTintColor: '#FFF',
+          headerStyle:{
+          backgroundColor: '#36393F'
+          }
+        }}
+      />
+
+      <Stack.Screen 
+        name="SearchMatch" 
+        component={SearchMatch}
+        options={{ 
+          title: 'Buscar Pelada',
+          headerTintColor: '#FFF',
+          headerStyle:{
+          backgroundColor: '#36393F'
+          }
+        }}
+      />
+
+      <Stack.Screen 
+        name="RatingMatch" 
+        component={RatingMatch}
+        options={{ 
+          title: 'Avaliar Pelada',
           headerTintColor: '#FFF',
           headerStyle:{
           backgroundColor: '#36393F'

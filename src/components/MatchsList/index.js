@@ -1,14 +1,9 @@
 import React, { useState } from 'react';
 import { 
   Container, 
-  Name, 
-  Header, 
-  Avatar, 
   ContentView, 
   Content,
   Actions,
-  LikeButton,
-  Like,
   TimePost
 } from './styles'
 
@@ -17,10 +12,13 @@ import { ptBR } from 'date-fns/locale'
 import { useNavigation } from '@react-navigation/native'
 
 import firestore from '@react-native-firebase/firestore';
-import { Text } from 'react-native';
+import { Text, Button } from 'react-native';
+import moment from 'moment';
 
 function MatchsList({ data, userId }){
   const navigation = useNavigation();
+  const formattedDate = moment(data.matchDate, 'DDMMYYYY').format('DD/MM/YYYY');
+  const formattedTime = moment(data.matchTime, 'HHmm').format('HH:mm');
 
   function formatTimeMatchs(){
     const datePost = new Date(data.created.seconds * 1000);
@@ -38,9 +36,10 @@ function MatchsList({ data, userId }){
     <Container>
 
       <ContentView>
-        <Content>{data?.TimeA}</Content>
-        <Text>X</Text>
-        <Content>{data?.TimeB}</Content>
+        <Content>{data?.TimeA} vs {data?.TimeB}</Content>
+        <Text>Data: {formattedDate}</Text>
+        <Text>Hora: {formattedTime}</Text>
+        <Text>Local: {data.matchLocation}</Text>
       </ContentView>
 
       <Actions>

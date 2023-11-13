@@ -175,7 +175,7 @@ function Home(){
 
       <ButtonCreateMatch 
       activeOpacity={0.8}
-      onPress={ () => navigation.navigate("CreateMatch") }
+      onPress={ () => navigation.navigate("MatchOptions") }
       >
         <Feather
           name="dribbble"

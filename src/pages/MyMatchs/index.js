@@ -21,13 +21,13 @@ function MyMatchs(){
   const [lastItem, setLastItem] = useState('');
   const [emptyList, setEmptyList] = useState(false);
 
-
   useFocusEffect(
     useCallback(() => {
       let isActive = true;
 
       function fetchMatchs(){
         firestore().collection('matchs')
+        .where('userId', '==', user.uid) // Filtrar partidas pelo ID do usuário logado
         .orderBy('created', 'desc')
         .limit(5)
         .get()
@@ -67,6 +67,7 @@ function MyMatchs(){
     setLoadingRefresh(true);
 
     firestore().collection('matchs')
+    .where('userId', '==', user.uid)
     .orderBy('created', 'desc')
     .limit(5)
     .get()
@@ -102,6 +103,7 @@ function MyMatchs(){
     if(loading) return;
 
     firestore().collection('matchs')
+    .where('userId', '==', user.uid)
     .orderBy('created', 'desc')
     .limit(5)
     .startAfter(lastItem)

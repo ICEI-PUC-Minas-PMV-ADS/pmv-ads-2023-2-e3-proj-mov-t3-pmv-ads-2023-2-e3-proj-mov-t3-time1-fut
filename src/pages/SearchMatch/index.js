@@ -6,32 +6,32 @@ import firestore from '@react-native-firebase/firestore';
 import Feather from 'react-native-vector-icons/Feather'
 import { Container, AreaInput, Input, List } from './styles'
 
-import SearchList from '../../components/SearchList';
+import SearchMatchList from '../../components/SearchMatchList';
 
 function Search(){
   const [input, setInput] = useState('');
-  const [users, setUsers] = useState([]);
+  const [matchs, setMatchs] = useState([]);
 
   useEffect(() => {
     if(input === '' || input === undefined){
-      setUsers([]);
+      setMatchs([]);
       return;
     }
 
-    const subscriber = firestore().collection('users')
-    .where('nome', '>=', input)
-    .where('nome', '<=', input + "\uf8ff")
+    const subscriber = firestore().collection('matchs')
+    .where('TimeA', '>=', input)
+    .where('TimeA', '<=', input + "\uf8ff")
     .onSnapshot( snapshot => {
-      const listUsers = [];
+      const listMatchs = [];
 
       snapshot.forEach(doc => {
-        listUsers.push({
+        listMatchs.push({
           ...doc.data(),
           id: doc.id,
         })
       })
-      
-      setUsers(listUsers);
+
+      setMatchs(listMatchs);
 
 
     })
@@ -50,7 +50,7 @@ function Search(){
           color="#E52246"
         />
         <Input
-          placeholder="Procurando alguem?"
+          placeholder="Digite o nome do seu time"
           value={input}
           onChangeText={ (text) =>  setInput(text) }
           placeholderTextColor="#353840"
@@ -58,8 +58,8 @@ function Search(){
       </AreaInput>
 
       <List
-      data={users}
-      renderItem={ ({item}) => <SearchList data={item} /> }
+      data={matchs}
+      renderItem={ ({item}) => <SearchMatchList data={item} /> }
       />
     </Container>
   )
