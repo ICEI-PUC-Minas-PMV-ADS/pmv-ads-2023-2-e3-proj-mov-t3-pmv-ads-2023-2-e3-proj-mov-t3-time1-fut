@@ -20,11 +20,11 @@ Diante do exposto, o problema que este projeto busca resolver é a limitação q
 O objetivo geral deste projeto se volta ao desenvolvimento de uma plataforma acessível e interativa para a organização de recursos para peladas de futebol, tendo em foco fazer o gerenciamento das informações a fim de atender o maior número de pessoas possíveis. Destacam-se objetivos específicos como:
 
 1. Controle e gerenciamento de cadastros de jogadores;
-1. Sistema de check-in nas listas de presença
+1. Sistema de check-in nas listas de presença;
 1. Fornecer funcionalidades para criação de times;
 1. Controle do tempo de uma partida;
-1. Controle de informações referentes ao evento semanal (marcação de gols e avaliação das partidas)
-1. Manter a organização das mensalidades dos usuários;
+1. Controle de informações referentes ao evento semanal (marcação de gols e avaliação das partidas);
+1. Manter a organização das mensalidades dos usuários.
 
 ## Justificativa
 
