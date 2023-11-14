@@ -92,11 +92,11 @@ A tabela a seguir apresenta os requisitos do projeto, identificando a prioridade
 |RF-001| Permitir que o usuário cadastre-se. | ALTA | 
 |RF-002| Permitir que o usuário crie sua pelada.   | ALTA |
 |RF-003| Permitir que o usuário associe-se à uma pelada.   | ALTA |
-|RF-004| Permitir que o usuário crie a lista de presença semanal.  | ALTA |
-|RF-005| Permitir que o usuário manifeste sua presença ou ausência na lista semanal.   | ALTA |
-|RF-006| A aplicação deverá sortear os times com base nos participantes da lista semanal.   | MÉDIA |
+|RF-004| Permitir que o usuário registre os gols da partida.  | ALTA |
+|RF-005| Permitir que o usuário visualize a lista de presença.   | ALTA |
+|RF-006| A aplicação deverá ter uma aba de resenha para a galera postar no aplicativo.   | MÉDIA |
 |RF-007| A aplicação deverá cronometrar as partidas.   | MÉDIA |
-|RF-008| A aplicação deverá armazenar as estatísticas dos marcadores e assistentes da partida.   | MÉDIA |
+|RF-008| A Aplicação deverá permitir que os usuários avaliem as partidas.   | MÉDIA |
 |RF-009| A aplicação deverá informar aos semimensalistas e avulsos a chave PIX para pagamento. | ALTA |
 |RF-010| A aplicação deverá permitir aos semimensalistas e avulsos informar o pagamento realizado.   | BAIXA |
 
