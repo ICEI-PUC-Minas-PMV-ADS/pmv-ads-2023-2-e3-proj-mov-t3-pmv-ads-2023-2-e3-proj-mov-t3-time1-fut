@@ -16,13 +16,12 @@ Com base na análise das personas forma identificadas as seguintes histórias de
 
 |EU COMO... `PERSONA`| QUERO/PRECISO ... `FUNCIONALIDADE`                   |PARA ... `MOTIVO/VALOR`                    |
 |--------------------|------------------------------------------------------|-------------------------------------------|
-|Vinícius Melo (Administrador)| Automatizar as presenças e ausências na lista semanal| Definir antecipadamente o quórum da semana|
-|Vinícius Melo (Administrador)| Sortear os times com os nomes dos participantes da semana| Não perdermos tempo tirando o time na hora da pelada|
+|Vinícius Melo (Administrador)| Visualizar as presenças na lista semanal| Definir antecipadamente o quórum da semana|
 |Vinícius Melo (Administrador)| Disponibilizar as informações de pagamento para os participantes| Padronizar e facilitar o pagamento |
-|João Vitor (Participante fixo)| Realizar meu check-in com "um clique"|Não comprometer minhas tarefas profissionais|
-|João Vitor (Participante fixo)| Contabilizar minhas participações em gol a cada semana| Definir metas e me desafiar a sempre melhorar minhas estatísticas|
-|Icaro Xavier (Participante esporádico)| Visualizar a lista de presença facilmente| Programar-me ao sair de casa de manhã sabendo se levarei ou não a mochila com os equipamentos |
-|Icaro Xavier (Participante esporádico)|Informações rápidas e objetivas |Não receber inúmeras notificações de WhatsApp redundantes e que não me dizem respeito|
+|João Vitor (Participante fixo)| Marcar o tempo das partidas |Para que todos joguem igualmente|
+|João Vitor (Participante fixo)| Avaliar o nível da partida da semana| Podermos ter uma média mensal, semestral e anual do nosso desempenho |
+|Icaro Xavier (Participante esporádico)| Contabilizar meus gols em gol a cada semana| Definir metas e me desafiar a sempre melhorar minhas estatísticas|
+|Icaro Xavier (Participante esporádico)|Um chat exclusivo para falarmos sobre a pelada da semana |Manter meu WhatsApp exclusivo para assuntos profissionais|
 |Larissa de Paula (Quer administrar uma pelada)| Avisar todas minhas amigas que iremos ter futebol semanalmente | Para poder estabelecer uma pelada frequente|
 |Larissa de Paula (Quer administrar uma pelada)| Confirmar a presença de todas que irão comparecer | Analisar a quantidade de pessoas para alugar a quadra de futebol.|
 
@@ -128,7 +127,7 @@ O projeto está restrito pelos itens apresentados na tabela a seguir.
 ## Diagrama de Casos de Uso
 
 O diagrama de casos de uso a seguir resume as interações dos atores com a aplicação:
-![Diagrama de casos de uso](img/dcu.png)
+![Diagrama de casos de uso](img/dcu2.jpeg)
 
 # Matriz de Rastreabilidade
 
@@ -137,12 +136,6 @@ A matriz de rastreabilidade é uma ferramenta usada para facilitar a visualizaç
 A matriz deve contemplar todos os elementos relevantes que fazem parte do sistema, conforme a figura meramente ilustrativa apresentada a seguir.
 
 ![Matriz de Rastreabilidade](img/matrizrastreabilidade.jpeg)
-
-> **Links Úteis**:
-> - [Artigo Engenharia de Software 13 - Rastreabilidade](https://www.devmedia.com.br/artigo-engenharia-de-software-13-rastreabilidade/12822/)
-> - [Verificação da rastreabilidade de requisitos usando a integração do IBM Rational RequisitePro e do IBM ClearQuest Test Manager](https://developer.ibm.com/br/tutorials/requirementstraceabilityverificationusingrrpandcctm/)
-> - [IBM Engineering Lifecycle Optimization – Publishing](https://www.ibm.com/br-pt/products/engineering-lifecycle-optimization/publishing/)
-
 
 # Gerenciamento de Projeto
 
