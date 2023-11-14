@@ -29,33 +29,40 @@
 | Passos 	           | 1. Acessar o aplicativo <br> 2. Ir no icone de se associar a partida <br> 3. Acessar a partida <br> 4. ver as informações da partida, como horário, quem está confirmado, local|
 | Critério de Êxito  | Verificar se o usuário consegue se associar a uma partida de futebol.|
   
-| **Caso de Teste** 	| **CT-04 - Permitir que o usuário crie a lista de presença semanal.**                                	|
+| **Caso de Teste** 	| **CT-04 - Permitir que o usuário registre os gols da partida.**                                	|
 |--------------------|-----------------------------------------------------------------------------------------------------|
-|	Requisito Associado| RF-04 - Permitir que o usuário crie a lista de presença semanal. <br> RF-05 - Permitir que o usuário manifeste sua presença ou ausência na lista semanal.|
-| Objetivo do Teste 	| Permitir que o usuário crie uma lista de presença.               |
-| Passos 	           | 1. Acessar o aplicativo <br> 2. Ir no icone de criar lista de presença <br> 3. Clicar em criar lista <br> 4. Colocar as informações necessárias <br> 5. Salvar dados <BR> 6. Verificar se os usuários conseguem manifestar a sua presença ou não                                                                                                           |
+|	Requisito Associado| RF-04 - Permitir que o usuário registre os gols da partida. 
+| Objetivo do Teste 	| Permitir que o usuário registre os gols da partida.               |
+| Passos 	           | 1. Acessar o aplicativo <br> 2. Ir no icone de buscar partida <br> 3. Clicar na partida desejada <br> 4. Informar no campo os gols realizados nas partidas <br> 5. Salvar dados <BR> 6. Verificar se os gols foram registrados corretamente |
 | Critério de Êxito  | Verificar se o usuário consegue criar a lista de presença.<br> Verificar se o usuário consegue confirmar ou não a presença.|
 
-| **Caso de Teste** 	| **CT-05 - A aplicação deverá sortear os times com base nos participantes da lista semanal.**                                	|
+| **Caso de Teste** 	| **CT-05 - Permitir que o usuário visualize a lista de presença.**                                	|
 |--------------------|-----------------------------------------------------------------------------------------------------|
-|	Requisito Associado| RF-06 - A aplicação deverá sortear os times com base nos participantes da lista semanal.|
-| Objetivo do Teste 	| O aplicativo deverá sortear os times.               |
-| Passos 	           | 1. Acessar o aplicativo <br> 2. Acessar partida<br> 3. Clicar no botão sortear times                                                                                              |
-| Critério de Êxito  | Verificar se o aplicativo fez sorteio dos jogadores conforme a lista de presença da partida|
+|	Requisito Associado| RF-05 - Permitir que o usuário visualize a lista de presença.|
+| Objetivo do Teste 	| O aplicativo deverá mostrar a lista de presença.               |
+| Passos 	           | 1. Acessar o aplicativo <br> 2. Acessar partida<br> 3. Clicar no botão lista de presença                                                                                              |
+| Critério de Êxito  | Verificar se o aplicativo informou os nomes dos jogadores associados na partida|
 
-| **Caso de Teste** 	| **CT-06 - A aplicação deverá cronometrar as partidas.**                                	|
+| **Caso de Teste** 	| **CT-06 - A aplicação deverá ter uma aba de resenha para a galera postar no aplicativo.**                                	|
+|--------------------|-----------------------------------------------------------------------------------------------------|
+|	Requisito Associado| RF-06 - A aplicação deverá ter uma aba de resenha para a galera postar no aplicativo.|
+| Objetivo do Teste 	| O aplicativo deverá ter uma aba para resenha dos jogadores.               |
+| Passos 	           | 1. Acessar aplicativo<br> 2. Ir na aba home<br> 3. Clicar no ícone em forma de lápis <br> 4. escrever um post<br> 5. Postar                                                                                              |
+| Critério de Êxito  | O post deverá aparecer na tela home e também deverá permitir que os usuários curtem a publicação.|
+
+| **Caso de Teste** 	| **CT-07 - A aplicação deverá cronometrar as partidas.**                                	|
 |--------------------|-----------------------------------------------------------------------------------------------------|
 |	Requisito Associado| RF-07 - A aplicação deverá cronometrar as partidas.|
 | Objetivo do Teste 	| O aplicativo deverá ter um cronômetro para ser utilizado nas partidas.               |
 | Passos 	           | 1. Acessar aplicativo<br> 2. Ir na aba Menu<br> 3. Clicar no botão cronômetro<br> 4. Clicar no botão iniciar                                                                                              |
 | Critério de Êxito  | O cronômetro deverá contar o tempo, parar quando clicar no botão e salvar o tempo quando clicar em parar.|
 
-| **Caso de Teste** 	| **CT-07 - A aplicação deverá armazenar as estatísticas dos marcadores e assistentes da partida..**                                	|
+| **Caso de Teste** 	| **CT-08 - A Aplicação deverá permitir que os usuários avaliem as partidas.**                                	|
 |--------------------|-----------------------------------------------------------------------------------------------------|
-|	Requisito Associado| RF-08 - A aplicação deverá armazenar as estatísticas dos marcadores e assistentes da partida.|
-| Objetivo do Teste 	| O aplicativo irá armazenar as estatísticas e assistências das partidas               |
-| Passos 	           | 1. Acessar o aplicativo<br> 2. Ir na aba Menu<br> 3. Clicar no botão partidas<br> 4. Entrar na partida<br> 5. Clicar no botão ver estatísticas e assistências da partidas.                                                                                               |
-| Critério de Êxito  | Deverá conter as informações das estatísticas e assistências da partida|
+|	Requisito Associado| RF-08 - A Aplicação deverá permitir que os usuários avaliem as partidas.|
+| Objetivo do Teste 	| O aplicativo irá permitir que os usuários avaliem as partidas |
+| Passos 	           | 1. Acessar o aplicativo<br> 2. Ir na aba de buscar partida<br> 3. Clicar no botão avaliar partida <br> 4. Avaliar de 1 a 5 clicando em cima do troféu em formato de chuteira<br> 5. Salvar.                                                                                               |
+| Critério de Êxito  | O aplicativo deverá permitir avaliar a partida|
 
 | **Caso de Teste** 	| **CT-08 - Pagamentos.**                                	|
 |--------------------|-----------------------------------------------------------------------------------------------------|
