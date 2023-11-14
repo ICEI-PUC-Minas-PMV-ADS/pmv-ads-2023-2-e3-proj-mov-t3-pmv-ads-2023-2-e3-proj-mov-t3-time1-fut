@@ -21,9 +21,9 @@ O objetivo geral deste projeto se volta ao desenvolvimento de uma plataforma ace
 
 1. Controle e gerenciamento de cadastros de jogadores;
 1. Sistema de check-in nas listas de presença
-1. Fornecer funcionalidades para criação e sorteio de times;
+1. Fornecer funcionalidades para criação de times;
 1. Controle do tempo de uma partida;
-1. Controle de informações referentes ao evento semanal (ranking de artilheiros e assistentes)
+1. Controle de informações referentes ao evento semanal (marcação de gols e avaliação das partidas)
 1. Manter a organização das mensalidades dos usuários;
 
 ## Justificativa
