@@ -16,6 +16,7 @@ import SearchMatch from '../pages/SearchMatch'
 import Match from '../pages/Match'
 import RatingMatch from '../pages/RatingPage';
 import ConfirmationList from '../pages/ConfirmationList';
+import PaymentList from '../pages/payers';
 
 const Tab = createBottomTabNavigator();
 const Stack = createNativeStackNavigator();
@@ -110,6 +111,18 @@ function StackRoutes(){
         component={ConfirmationList}
         options={{ 
           title: 'Lista de Presença',
+          headerTintColor: '#FFF',
+          headerStyle:{
+          backgroundColor: '#36393F'
+          }
+        }}
+      />
+
+      <Stack.Screen 
+        name="PaymentList" 
+        component={PaymentList}
+        options={{ 
+          title: 'Lista de Pagadores',
           headerTintColor: '#FFF',
           headerStyle:{
           backgroundColor: '#36393F'

@@ -184,14 +184,6 @@ function Profile(){
         <ButtonText color="#FFF">Atualizar Perfil</ButtonText>
       </Button>
 
-      <Button bg="#428cfd" onPress={ () => navigation.navigate("CreateMatch")}>
-        <ButtonText color="#FFF">Criar Partida</ButtonText>
-      </Button>
-
-      <Button bg="#428cfd" onPress={ () => navigation.navigate("StopWatch")}>
-        <ButtonText color="#FFF">Iniciar Partida</ButtonText>
-      </Button>
-
       <Button bg="#ddd" onPress={ handleSignOut }>
         <ButtonText color="#353840">Sair</ButtonText>
       </Button>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { View, Text, Alert  } from 'react-native';
+import { View, Text, Alert, TextInput, TouchableOpacity, } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 
 import { Container, Texto, ButtonText, Button } from './styles'
@@ -10,8 +10,7 @@ function Match({ route, navigation }) {
   const { matchId } = route.params;
   const [matchData, setMatchData] = useState(null);
   const { user } = useContext(AuthContext);
-  const { TimeA, setTimeA } = useState([]);
-  const { TimeB, setTimeB } = useState([]);
+   const [inputValue, setInputValue] = useState('');
 
   useEffect(() => {
     const matchRef = firestore().collection('matchs').doc(matchId);
@@ -37,9 +36,9 @@ function handleJoinTeamA() {
       matchRegistrationRef.update({
         TimeA: firestore.FieldValue.arrayUnion(user.nome)
       }).then(() => {
-        console.log('Usuário adicionado ao TimeA com sucesso');
+        Alert.alert("Sucesso", `cadastrado no time ${matchData.TimeA}`);
       }).catch((error) => {
-        console.error('Erro ao adicionar usuário ao TimeA:', error);
+        Alert.alert('Erro ao adicionar usuário ao TimeA:', error);
       });
     } else {
       // Se o documento não existir, crie um novo documento
@@ -55,7 +54,7 @@ function handleJoinTeamA() {
   }).catch((error) => {
     console.error('Erro ao verificar a existência do documento:', error);
   });
-  Alert.alert("Sucesso", `cadastrado no time ${matchData.TimeA}`);
+  
 }
 
 
@@ -89,6 +88,38 @@ function handleJoinTeamB() {
     console.error('Erro ao verificar a existência do documento:', error);
   });
     Alert.alert("Sucesso", `cadastrado no time ${matchData.TimeB}`); 
+  };
+
+  function handlePayments() {
+
+  const matchRegistrationRef = firestore().collection('payments').doc(matchId);
+
+  // Verificar se o documento já existe
+  matchRegistrationRef.get().then((docSnapshot) => {
+    if (docSnapshot.exists) {
+      // Se o documento existir, atualize o array TimeA
+      matchRegistrationRef.update({
+        pagadores: firestore.FieldValue.arrayUnion(user.nome)
+      }).then(() => {
+        console.log('Usuário adicionado ao TimeA com sucesso');
+      }).catch((error) => {
+        console.error('Erro ao adicionar usuário ao TimeB:', error);
+      });
+    } else {
+      // Se o documento não existir, crie um novo documento
+      matchRegistrationRef.set({
+        matchId: matchId,
+        pagadores: [user.nome]
+      }).then(() => {
+        console.log('Novo documento criado com sucesso');
+      }).catch((error) => {
+        console.error('Erro ao criar o novo documento:', error);
+      });
+    }
+  }).catch((error) => {
+    console.error('Erro ao verificar a existência do documento:', error);
+  });
+    Alert.alert("Sucesso"); 
   };
 
   const handleStartMatch = () => {
@@ -138,6 +169,17 @@ function handleJoinTeamB() {
       <Button bg="#428cfd" onPress={() => navigation.navigate("ConfirmationList", { matchId: matchId})}>
         <ButtonText color="#FFF">Lista de Presença</ButtonText>
       </Button>
+
+      <Button bg="#429e09" onPress={handlePayments}>
+        <ButtonText color="#FFF">Confirmar Pagamento</ButtonText>
+      </Button>
+
+      <Button bg="#428cfd" onPress={() => navigation.navigate("PaymentList", { matchId: matchId})}>
+        <ButtonText color="#FFF">Lista de Pagamento</ButtonText>
+      </Button>
+
+
+      <Texto>Chave pix: {matchData.pix}</Texto>
 
 
 

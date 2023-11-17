@@ -1,208 +1,139 @@
-import React, { Component } from "react";
+import React, { useState, useEffect } from "react";
+import { View, Text, TouchableOpacity, StyleSheet, Image, Button } from 'react-native';
+import { Card } from 'react-native-elements';
+import { Container3, Texto, ButtonText, Botao } from './styles'
 
-import {
+function StopWatch(){
+  const [numero, setNumero] = useState(0);
+  const [botao, setBotao] = useState('VAI');
+  const [ultimo, setUltimo] = useState(null);
+  const [timer, setTimer] = useState(null);
+  const [scoreTeam1, setScoreTeam1] = useState(0);
+  const [scoreTeam2, setScoreTeam2] = useState(0);
 
-  View,
-
-  Text,
-
-  StyleSheet,
-
-  Image,
-
-  TouchableOpacity
-
-} from 'react-native';
-
- 
-
-class StopWatch extends Component{
-
-  constructor(props){
-
-    super(props);
-
-    this.state = {
-      numero: 0,
-      botao: 'VAI',
-      ultimo: null
-    };
-
-    //Variavel do timer do relogio.
-
-    this.timer = null;
-    this.vai = this.vai.bind(this);
-    this.limpar = this.limpar.bind(this);
-  }
-
- 
-
-  vai(){
-
-    if(this.timer != null){
-
-      //Aqui vai parar o timer.
-      clearInterval(this.timer);
-      this.timer = null;
-      this.setState({botao: 'VAI'});
-
-    }else{
-
-      //começa a girar o timer.
-      this.timer = setInterval( ()=> {
-        this.setState({numero: this.state.numero + 0.1})
+  const vai = () => {
+    if (timer !== null) {
+      clearInterval(timer);
+      setTimer(null);
+      setBotao('VAI');
+    } else {
+      const newTimer = setInterval(() => {
+        setNumero((prevNumero) => prevNumero + 0.1);
       }, 100);
-
-      this.setState({botao: 'PARAR'});
-
+      setTimer(newTimer);
+      setBotao('PARAR');
     }
-  }
+  };
 
-  limpar(){
+  const addGoal = (team) => {
+    if (team === 1) {
+      setScoreTeam1(scoreTeam1 + 1);
+    } else {
+      setScoreTeam2(scoreTeam2 + 1);
+    }
+  };
 
-    if(this.timer != null){
-      //aqui vai para o timer.
-      clearInterval(this.timer);
-      this.timer = null;
+  const limpar = () => {
+    if (timer !== null) {
+      clearInterval(timer);
+      setTimer(null);
     }
 
-    this.setState({
-      ultimo: this.state.numero,
-      numero: 0,
-      botao: 'VAI'
-    })
-  }
+    setUltimo(numero);
+    setNumero(0);
+    setBotao('VAI');
+  };
 
- 
+  useEffect(() => {
+    return () => {
+      if (timer !== null) {
+        clearInterval(timer);
+      }
+    };
+  }, [timer]);
 
-  render(){
-
-    return(
-
-      <View style={styles.container}>
-        <Image
+  return (
+    <View style={styles.container}>
+      <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',}}>
+        <Card containerStyle={{ width: '100%', }}>
+          <View style={{ alignItems: 'center' }}>
+            <Texto>{scoreTeam1} x {scoreTeam2}</Texto>
+          </View>
+          <View style={{ }}>
+            <Button  title="Adicionar Gol para o Time 1" onPress={() => addGoal(1)} />
+            <Button title="Adicionar Gol para o Time 2" onPress={() => addGoal(2)} />
+          </View>
+        </Card>
+      </View>
+      <Image
         source={require('../../assets/cronometro.png')}
         style={styles.cronometro}
-        />
-
-        <Text style={styles.timer}> {this.state.numero.toFixed(1)} </Text>
-
-        <View style={styles.btnArea}>
-
-          <TouchableOpacity style={styles.btn} onPress={this.vai}>
-
-            <Text style={styles.btnTexto}> {this.state.botao} </Text>
-
-          </TouchableOpacity>
-
-
-          <TouchableOpacity style={styles.btn} onPress={this.limpar}>
-
-            <Text style={styles.btnTexto}>LIMPAR</Text>
-
-          </TouchableOpacity>
-
-        </View>
-        <View style={styles.areaUltima}>
-
-            <Text style={styles.textoCorrida}>
-
-              {this.state.ultimo > 0 ? 'Ultimo tempo: ' + this.state.ultimo.toFixed(2) + 's' : ''}
-
-            </Text>
-
-          </View>
+      />
+      <Text style={styles.timer}>{numero.toFixed(1)}</Text>
+      <View style={styles.btnArea}>
+        <TouchableOpacity style={styles.btn} onPress={vai}>
+          <Text style={styles.btnTexto}>{botao}</Text>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.btn} onPress={limpar}>
+          <Text style={styles.btnTexto}>LIMPAR</Text>
+        </TouchableOpacity>
       </View>
-    );
-
-  }
-
- 
-
-}
-
+      <View style={styles.areaUltima}>
+        <Text style={styles.textoCorrida}>
+          {ultimo > 0 ? 'Ultimo tempo: ' + ultimo.toFixed(2) + 's' : ''}
+        </Text>
+      </View>
+    </View>
+  );
+};
 
 const styles = StyleSheet.create({
-
-  container:{
-
-    flex:1,
-
-    alignItems: 'center',
-
-    justifyContent: 'center',
-
-    backgroundColor: '#00aeef'
-
-  },
-
-  timer:{
-
-    marginTop: -160,
-
-    color: '#FFF',
-
-    fontSize: 65,
-
-    fontWeight: 'bold'
-
-  },
-
-  btnArea:{
-
-    flexDirection: 'row',
-
-    marginTop: 70,
-
-    height: 40
-
-  },
-
-  btn:{
-
+  container: {
     flex: 1,
-
-    justifyContent: 'center',
-
     alignItems: 'center',
-
-    backgroundColor: '#FFF',
-
-    height: 40,
-
-    margin: 17,
-
-    borderRadius: 9
-
+    justifyContent: 'center',
+    backgroundColor: '#36393F',
   },
-
-  btnTexto:{
-
-    fontSize: 20,
-
+  timer: {
+    marginTop: -80,
+    color: '#FFF',
+    fontSize: 40,
     fontWeight: 'bold',
-
-    color: '#00aeef'
-
   },
-
-  areaUltima:{
-
-    marginTop: 40,
-
+  btnArea: {
+    flexDirection: 'row',
+    marginTop: 20,
   },
-
-  textoCorrida:{
-
-    fontSize: 25,
-
+  btn: {
+    flex: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    backgroundColor: '#FFF',
+    height: 35,
+    margin: 10,
+    borderRadius: 9,
+  },
+  btnTexto: {
+    fontSize: 16,
+    fontWeight: 'bold',
+    color: '#00aeef',
+  },
+  areaUltima: {
+    marginTop: 10,
+  },
+  textoCorrida: {
+    marginTop: 0,
+    marginBottom: 10,
+    fontSize: 16,
     fontStyle: 'italic',
-
-    color: '#FFF'
-
-  }
-
+    color: '#FFF',
+  },
+  cronometro: {
+    marginTop: 40,
+    height: '35%',
+    width: '40%',
+  },
+  
 });
 
- 
 export default StopWatch;

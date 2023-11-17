@@ -14,6 +14,7 @@ function CreateMatch() {
   const [matchDate, setMatchDate] = useState('');
   const [matchTime, setMatchTime] = useState('');
   const [matchLocation, setMatchLocation] = useState('');
+  const [pix, setPix] = useState('');
   const navigation = useNavigation();
   const { user } = useContext(AuthContext);
   const dataRef = useRef('');
@@ -58,7 +59,8 @@ function CreateMatch() {
       avatarUrl,
       matchLocation: matchLocation,
       matchTime: matchTime,
-      matchDate: matchDate
+      matchDate: matchDate,
+      pix: pix
     })
     .then( () => {
       setTeamA('');
@@ -66,6 +68,7 @@ function CreateMatch() {
       setMatchDate('');
       setMatchTime('');
       setMatchLocation('');
+      setPix('');
       Alert.alert("Sucesso", `Partida criada entre ${teamA} e ${teamB}!`);
     })
     .then( () => {
@@ -124,6 +127,12 @@ function CreateMatch() {
         onChangeText={setMatchLocation}
         style={styles.input}
       />
+      <TextInput
+        placeholder="Chave PIX"
+        value={pix}
+        onChangeText={setPix}
+        style={styles.input}
+      />
       <Button title="Criar Partida" onPress={handleCreateMatch} />
     </View>
   );
@@ -132,16 +141,15 @@ function CreateMatch() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    justifyContent: 'center',
-    padding: 30,
+    padding: 40,
   },
   input: {
     height: 40,
     borderColor: 'gray',
     borderWidth: 1,
     borderRadius: 5,
-    marginBottom: 40,
-    paddingHorizontal: 8,
+    marginBottom: 20,
+    paddingHorizontal: 10,
   },
 });
 
