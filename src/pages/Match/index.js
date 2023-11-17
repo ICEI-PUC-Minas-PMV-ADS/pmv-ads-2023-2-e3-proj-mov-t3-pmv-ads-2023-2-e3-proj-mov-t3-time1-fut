@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useContext } from 'react';
-import { View, Text, Alert, TextInput, TouchableOpacity, } from 'react-native';
+import { View, Text, Alert, TouchableOpacity, StyleSheet, ScrollView, } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
+import Clipboard from '@react-native-clipboard/clipboard';
 
 import { Container, Texto, ButtonText, Button } from './styles'
 import Header from '../../components/Header'
@@ -10,7 +11,7 @@ function Match({ route, navigation }) {
   const { matchId } = route.params;
   const [matchData, setMatchData] = useState(null);
   const { user } = useContext(AuthContext);
-   const [inputValue, setInputValue] = useState('');
+  const [copied, setCopied] = useState(false);
 
   useEffect(() => {
     const matchRef = firestore().collection('matchs').doc(matchId);
@@ -25,6 +26,16 @@ function Match({ route, navigation }) {
     return () => unsubscribe();
   }, [matchId]);
 
+  const handleCopyToClipboard = () => {
+    Clipboard.setString(matchData.pix);
+    setCopied(true);
+
+    // Resetar o estado para false após alguns segundos para fornecer feedback visual
+    setTimeout(() => {
+      setCopied(false);
+    }, 2000);
+  };
+
 function handleJoinTeamA() {
 
   const matchRegistrationRef = firestore().collection('matchRegistrations').doc(matchId);
@@ -36,7 +47,7 @@ function handleJoinTeamA() {
       matchRegistrationRef.update({
         TimeA: firestore.FieldValue.arrayUnion(user.nome)
       }).then(() => {
-        Alert.alert("Sucesso", `cadastrado no time ${matchData.TimeA}`);
+        Alert.alert("Sucesso", `Cadastrado no time ${matchData.TimeA}`);
       }).catch((error) => {
         Alert.alert('Erro ao adicionar usuário ao TimeA:', error);
       });
@@ -46,13 +57,13 @@ function handleJoinTeamA() {
         matchId: matchId,
         TimeA: [user.nome]
       }).then(() => {
-        console.log('Novo documento criado com sucesso');
+        Alert.alert("Sucesso", `Cadastrado no time ${matchData.TimeA}`);
       }).catch((error) => {
-        console.error('Erro ao criar o novo documento:', error);
+        Alert.alert('Erro ao adicionar usuário ao TimeA:', error);
       });
     }
   }).catch((error) => {
-    console.error('Erro ao verificar a existência do documento:', error);
+    Alert.alert('Erro ao adicionar usuário ao TimeA:', error);
   });
   
 }
@@ -65,13 +76,13 @@ function handleJoinTeamB() {
   // Verificar se o documento já existe
   matchRegistrationRef.get().then((docSnapshot) => {
     if (docSnapshot.exists) {
-      // Se o documento existir, atualize o array TimeA
+      // Se o documento existir, atualize o array TimeB
       matchRegistrationRef.update({
         TimeB: firestore.FieldValue.arrayUnion(user.nome)
       }).then(() => {
-        console.log('Usuário adicionado ao TimeA com sucesso');
+        Alert.alert("Sucesso", `Cadastrado no time ${matchData.TimeB}`); 
       }).catch((error) => {
-        console.error('Erro ao adicionar usuário ao TimeB:', error);
+        Alert.alert('Erro ao adicionar usuário ao TimeB:', error);
       });
     } else {
       // Se o documento não existir, crie um novo documento
@@ -79,15 +90,14 @@ function handleJoinTeamB() {
         matchId: matchId,
         TimeB: [user.nome]
       }).then(() => {
-        console.log('Novo documento criado com sucesso');
+        Alert.alert("Sucesso", `Cadastrado no time ${matchData.TimeB}`); 
       }).catch((error) => {
-        console.error('Erro ao criar o novo documento:', error);
+        Alert.alert('Erro ao adicionar usuário ao TimeB:', error);
       });
     }
   }).catch((error) => {
-    console.error('Erro ao verificar a existência do documento:', error);
+    Alert.alert('Erro ao adicionar usuário ao TimeB:', error);
   });
-    Alert.alert("Sucesso", `cadastrado no time ${matchData.TimeB}`); 
   };
 
   function handlePayments() {
@@ -97,13 +107,13 @@ function handleJoinTeamB() {
   // Verificar se o documento já existe
   matchRegistrationRef.get().then((docSnapshot) => {
     if (docSnapshot.exists) {
-      // Se o documento existir, atualize o array TimeA
+      // Se o documento existir, atualize o array
       matchRegistrationRef.update({
         pagadores: firestore.FieldValue.arrayUnion(user.nome)
       }).then(() => {
-        console.log('Usuário adicionado ao TimeA com sucesso');
+        Alert.alert("Pagamento confirmado com sucesso");
       }).catch((error) => {
-        console.error('Erro ao adicionar usuário ao TimeB:', error);
+        Alert.alert('Erro ao confirmar Pagamento:', error);
       });
     } else {
       // Se o documento não existir, crie um novo documento
@@ -111,23 +121,22 @@ function handleJoinTeamB() {
         matchId: matchId,
         pagadores: [user.nome]
       }).then(() => {
-        console.log('Novo documento criado com sucesso');
+        Alert.alert("Pagamento confirmado com sucesso");
       }).catch((error) => {
-        console.error('Erro ao criar o novo documento:', error);
+        Alert.alert('Erro ao confirmar Pagamento:', error);
       });
     }
   }).catch((error) => {
-    console.error('Erro ao verificar a existência do documento:', error);
+    Alert.alert('Erro ao confirmar Pagamento:', error);
   });
-    Alert.alert("Sucesso"); 
   };
 
   const handleStartMatch = () => {
-    navigation.navigate("StopWatch")   
+    navigation.navigate("StopWatch", { matchId: matchId})
   };
 
   const handleRateMatch = () => {
-    navigation.navigate("RatingMatch")   
+    navigation.navigate("RatingMatch", { matchId: matchId})   
   };
 
 
@@ -146,6 +155,7 @@ function handleJoinTeamB() {
   }
 
   return (
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
     <Container>
       <Header/>
       <Texto>{matchData.TimeA} vs {matchData.TimeB}</Texto>
@@ -162,30 +172,56 @@ function handleJoinTeamB() {
         <ButtonText color="#FFF">Iniciar Pelada</ButtonText>
       </Button>
 
-      <Button bg="#428cfd" onPress={handleRateMatch}>
-        <ButtonText color="#FFF">Avaliar Pelada</ButtonText>
-      </Button>
-
       <Button bg="#428cfd" onPress={() => navigation.navigate("ConfirmationList", { matchId: matchId})}>
         <ButtonText color="#FFF">Lista de Presença</ButtonText>
-      </Button>
-
-      <Button bg="#429e09" onPress={handlePayments}>
-        <ButtonText color="#FFF">Confirmar Pagamento</ButtonText>
       </Button>
 
       <Button bg="#428cfd" onPress={() => navigation.navigate("PaymentList", { matchId: matchId})}>
         <ButtonText color="#FFF">Lista de Pagamento</ButtonText>
       </Button>
 
+      <Button bg="#429e09" onPress={handlePayments}>
+        <ButtonText color="#FFF">Confirmar Pagamento</ButtonText>
+      </Button>
 
-      <Texto>Chave pix: {matchData.pix}</Texto>
+      <Button bg="#428cfd" onPress={handleRateMatch}>
+        <ButtonText color="#FFF">Avaliar Pelada</ButtonText>
+      </Button>
 
-
-
+      <View style={styles.pixContainer}>
+        <Text style={styles.pixText}>Chave Pix: {matchData.pix}</Text>
+        <TouchableOpacity style={styles.copyButton} onPress={handleCopyToClipboard}>
+          <Text style={styles.buttonText}>{copied ? 'Copiado!' : 'Copiar'}</Text>
+        </TouchableOpacity>
+      </View>
     </Container>
+    </ScrollView>
   );
 }
 
+const styles = StyleSheet.create({
+  pixContainer: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginVertical: 10,
+  },
+  pixText: {
+    marginLeft: '10%',
+    flex: 1,
+    fontSize: 20,
+    color: '#FFF',
+  },
+  copyButton: {
+    backgroundColor: '#007BFF',
+    padding: 10,
+    borderRadius: 5,
+    marginRight: '10%',
+  },
+  buttonText: {
+    color: '#FFF',
+    fontSize: 16,
+  },
+});
 
 export default Match;

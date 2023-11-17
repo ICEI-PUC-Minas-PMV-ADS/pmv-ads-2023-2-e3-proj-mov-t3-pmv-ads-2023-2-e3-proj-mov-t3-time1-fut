@@ -1,5 +1,5 @@
 import React, { useState, useRef , useContext } from 'react';
-import { View, TextInput, Button, StyleSheet, Alert } from 'react-native';
+import { View, TextInput, Button, StyleSheet, Alert, ScrollView } from 'react-native';
 import { useNavigation } from '@react-navigation/native'
 import firestore from '@react-native-firebase/firestore';
 import storage from '@react-native-firebase/storage';
@@ -84,6 +84,7 @@ function CreateMatch() {
 
 
   return (
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
     <View style={styles.container}>
       <TextInput
         placeholder="Nome do Time A"
@@ -135,6 +136,7 @@ function CreateMatch() {
       />
       <Button title="Criar Partida" onPress={handleCreateMatch} />
     </View>
+    </ScrollView>
   );
 }
 

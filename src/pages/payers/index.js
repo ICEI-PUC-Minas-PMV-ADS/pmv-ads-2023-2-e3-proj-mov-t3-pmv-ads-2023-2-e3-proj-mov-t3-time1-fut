@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
@@ -26,6 +26,7 @@ const PaymentList = ({ route }) => {
 
 
   return (
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
     <Container>
         <Header/>
         <Content> Pagadores </Content>
@@ -36,6 +37,7 @@ const PaymentList = ({ route }) => {
         ))}
         
     </Container>
+    </ScrollView>
   );
 };
 

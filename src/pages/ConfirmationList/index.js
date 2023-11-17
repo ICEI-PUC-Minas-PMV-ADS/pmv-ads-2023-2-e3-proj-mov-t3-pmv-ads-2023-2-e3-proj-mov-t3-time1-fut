@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react';
-import { View, Text } from 'react-native';
+import { View, Text, ScrollView, } from 'react-native';
 import firestore from '@react-native-firebase/firestore';
-import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons'
 
 import { Container, Content, ContentText, PayButton } from './styles';
 import Header from '../../components/Header'
@@ -11,8 +10,6 @@ const ConfirmationList = ({ route }) => {
   [matchData, setMatchData] = useState(null);
   const [timeA, setTimeA] = useState([]);
   const [timeB, setTimeB] = useState([]);
-  const [buttonColor, setButtonColor] = useState('#FFF');
-  const [iconColor, setIconColor] = useState('#FFF');
 
   useEffect(() => {
     const matchRegistrationRef = firestore().collection('matchRegistrations').doc(matchId);
@@ -28,18 +25,38 @@ const ConfirmationList = ({ route }) => {
     });
   }, [matchId]);
 
-  const handlePayButtonPress = () => {
-    const newColor = "#09e010"; 
-    setButtonColor(newColor);
-    const newIconColor = "#09e010";
-    setIconColor(newIconColor);
-  };
+  useEffect(() => {
+    const matchRef = firestore().collection('matchs').doc(matchId);
 
+    const unsubscribe = matchRef.onSnapshot((documentSnapshot) => {
+      if (documentSnapshot.exists) {
+        const data = documentSnapshot.data();
+        setMatchData(data);
+      }
+    });
+
+    return () => unsubscribe();
+  }, [matchId]);
+
+  if (!matchData) {
+    return (
+      <View style={{justifyContent: 'center', alignItems: 'center', backgroundColor: '#F1F1F1'}}>
+        <Text style={{
+                fontSize: 30,
+                justifyContent: 'center',
+                alignItems: 'center',
+                fontFamily: 'Arial',
+                fontWeight: 'bold',
+            }}>Carregando...</Text>
+      </View>
+    );
+  }
 
   return (
+    <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
     <Container>
         <Header/>
-        <Content> Time A </Content>
+        <Content> {matchData.TimeA} </Content>
         {timeA.map((player, index) => (
           <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center',}}>
             <ContentText key={index}>{player}</ContentText>
@@ -47,13 +64,14 @@ const ConfirmationList = ({ route }) => {
         ))}
         
 
-        <Content> Time B </Content>
+        <Content> {matchData.TimeB} </Content>
         {timeB.map((player, index) => (
           <View style={{flexDirection: 'row', justifyContent: 'center', alignItems: 'center',}}>
             <ContentText key={index}>{player}</ContentText>
           </View> 
         ))}
     </Container>
+    </ScrollView>
   );
 };
 

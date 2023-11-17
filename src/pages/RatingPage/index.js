@@ -1,7 +1,11 @@
-import React, { useState } from 'react';
-import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View, Image } from 'react-native';
+import React, { useState, useContext } from 'react';
+import { SafeAreaView, StyleSheet, Text, TouchableOpacity, View, Image, Alert } from 'react-native';
+import firestore from '@react-native-firebase/firestore';
+import { AuthContext } from '../../contexts/auth'
 
-function RatingMatch() {
+function RatingMatch({ route, }) {
+  const { matchId } = route.params;
+  const { user } = useContext(AuthContext);
   const [defaultRating, setdefaultRating] = useState(2);
   const [maxRating, setmaxRating] = useState([1, 2, 3, 4, 5]);
 
@@ -33,10 +37,42 @@ function RatingMatch() {
     );
   };
 
+  function handleRating() {
+
+  const matchRegistrationRef = firestore().collection('ratings').doc(matchId);
+
+  // Verificar se o documento já existe
+  matchRegistrationRef.get().then((docSnapshot) => {
+    if (docSnapshot.exists) {
+      // Se o documento existir, atualize o array
+      matchRegistrationRef.update({
+        nota: defaultRating
+      }).then(() => {
+        Alert.alert("Sucesso","Avaliação Salva!");
+      }).catch((error) => {
+        Alert.alert('Erro ao gravar Avaliação:', error);
+      });
+    } else {
+      // Se o documento não existir, crie um novo documento
+      matchRegistrationRef.set({
+        matchId: matchId,
+        avaliador: user.nome,
+        nota: defaultRating
+      }).then(() => {
+        Alert.alert("Sucesso","Avaliação Salva!");
+      }).catch((error) => {
+        Alert.alert('Erro ao gravar Avaliação:', error);
+      });
+    }
+  }).catch((error) => {
+    Alert.alert('Erro ao gravar Avaliação:', error);
+  });
+  };
+
   return (
     <SafeAreaView style={styles.container}>
 
-    <Text style={styles.textStyle}> Avalie a partida </Text>
+    <Text style={styles.textStyle}> Avalie a Pelada! </Text>
       <CustomRatingBar />
       
       <Text style={styles.textStyle}>
@@ -45,7 +81,7 @@ function RatingMatch() {
       <TouchableOpacity
         activeOpacity={0.7}
         style={styles.buttonStyle}
-        onPress={() => alert(defaultRating)}
+        onPress={handleRating}
       >
         <Text style={styles.textStyleItem}> Enviar </Text>
       </TouchableOpacity>

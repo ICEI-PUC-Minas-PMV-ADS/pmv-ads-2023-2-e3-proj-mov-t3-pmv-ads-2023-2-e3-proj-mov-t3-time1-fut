@@ -1,15 +1,31 @@
 import React, { useState, useEffect } from "react";
-import { View, Text, TouchableOpacity, StyleSheet, Image, Button } from 'react-native';
+import { View, Text, TouchableOpacity, StyleSheet, Image, Button} from 'react-native';
 import { Card } from 'react-native-elements';
-import { Container3, Texto, ButtonText, Botao } from './styles'
+import firestore from '@react-native-firebase/firestore';
+import { Texto, ButtonText, Botao,  } from './styles'
 
-function StopWatch(){
+function StopWatch({ route, }){
+  const { matchId } = route.params;
+  const [matchData, setMatchData] = useState(null);
   const [numero, setNumero] = useState(0);
   const [botao, setBotao] = useState('VAI');
   const [ultimo, setUltimo] = useState(null);
   const [timer, setTimer] = useState(null);
   const [scoreTeam1, setScoreTeam1] = useState(0);
   const [scoreTeam2, setScoreTeam2] = useState(0);
+
+  useEffect(() => {
+    const matchRef = firestore().collection('matchs').doc(matchId);
+
+    const unsubscribe = matchRef.onSnapshot((documentSnapshot) => {
+      if (documentSnapshot.exists) {
+        const data = documentSnapshot.data();
+        setMatchData(data);
+      }
+    });
+
+    return () => unsubscribe();
+  }, [matchId]);
 
   const vai = () => {
     if (timer !== null) {
@@ -52,6 +68,20 @@ function StopWatch(){
     };
   }, [timer]);
 
+  if (!matchData) {
+    return (
+      <View style={{justifyContent: 'center', alignItems: 'center', backgroundColor: '#F1F1F1'}}>
+        <Text style={{
+                fontSize: 30,
+                justifyContent: 'center',
+                alignItems: 'center',
+                fontFamily: 'Arial',
+                fontWeight: 'bold',
+            }}>Carregando...</Text>
+      </View>
+    );
+  }
+
   return (
     <View style={styles.container}>
       <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center',}}>
@@ -59,9 +89,13 @@ function StopWatch(){
           <View style={{ alignItems: 'center' }}>
             <Texto>{scoreTeam1} x {scoreTeam2}</Texto>
           </View>
-          <View style={{ }}>
-            <Button  title="Adicionar Gol para o Time 1" onPress={() => addGoal(1)} />
-            <Button title="Adicionar Gol para o Time 2" onPress={() => addGoal(2)} />
+          <View style={{ flexDirection: 'row', alignItems: 'center', justifyContent: 'center', width: '100%' }}>
+            <Botao onPress={() => addGoal(1)}>
+              <ButtonText>Gol {matchData.TimeA}!</ButtonText>
+            </Botao>
+            <Botao onPress={() => addGoal(2)}>
+              <ButtonText>Gol {matchData.TimeB}!</ButtonText>
+            </Botao>
           </View>
         </Card>
       </View>
@@ -95,14 +129,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#36393F',
   },
   timer: {
-    marginTop: -80,
+    marginTop: -60,
+    marginBottom: 10,
     color: '#FFF',
     fontSize: 40,
     fontWeight: 'bold',
   },
   btnArea: {
     flexDirection: 'row',
-    marginTop: 20,
+    marginTop: 50,
   },
   btn: {
     flex: 1,
@@ -120,6 +155,7 @@ const styles = StyleSheet.create({
   },
   areaUltima: {
     marginTop: 10,
+    marginBottom:10
   },
   textoCorrida: {
     marginTop: 0,
@@ -129,7 +165,8 @@ const styles = StyleSheet.create({
     color: '#FFF',
   },
   cronometro: {
-    marginTop: 40,
+    marginTop: 30,
+    marginBottom: -40,
     height: '35%',
     width: '40%',
   },
