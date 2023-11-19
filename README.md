@@ -27,7 +27,7 @@ Assim que a primeira versão do sistema estiver disponível, deverá complementa
 
  link da aplicação interativa disponível para acesso localhost.
 
-Usuário de teste, o login e a senha aqui ( usuário - xxxxxx / senha - xxxxx).
+Usuário de teste, o login e a senha aqui ( usuário - teste2 / senha - 123123).
 
 O link e o usuário/senha descritos acima são apenas exemplos de como tais informações deverão ser apresentadas.
 
